@@ -11,7 +11,6 @@ import {languages} from "~/config";
 import {useCommonContext} from '~/context/common-context'
 import LoadingModal from "./LoadingModal";
 import Image from "next/image";
-import GeneratingModal from "~/components/GeneratingModal";
 
 const navigation = {
   topMenu: [
@@ -68,7 +67,6 @@ export default function Header({
   return (
     <header className="sticky top-0 bg-[#020d24] z-20 w-full">
       <LoadingModal loadingText={indexLanguageText.loadingText}/>
-      <GeneratingModal generatingText={indexLanguageText.generateText}/>
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           {/* <a href={`/${locale}`} className="-m-1.5 p-1.5" onClick={() => setShowLoadingModal(true)}>

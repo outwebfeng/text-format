@@ -7,13 +7,13 @@ export const languages = [
     code: "en-US",
     lang: "en",
     language: "English",
+  } ,
+  {
+    code: "zh-CN",
+    lang: "zh",
+    language: "简体中文",
   }
   // ,
-  // {
-  //   code: "zh-CN",
-  //   lang: "zh",
-  //   language: "简体中文",
-  // },
   // {
   //   code: "ko-KR",
   //   lang: "ko",

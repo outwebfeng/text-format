@@ -509,7 +509,6 @@ const PageComponent = ({
                         value={addLineToLeft}
                         onChange={handleInputChange}
                         className="border-b-2 border-gray-300 bg-transparent py-1 px-2 focus:outline-none focus:border-blue-500 w-32"
-                        placeholder="Add text"
                       />
                       <span>{textCleanText.line_to_left}</span>
                     </div>
@@ -521,7 +520,6 @@ const PageComponent = ({
                         value={addLineToRight}
                         onChange={handleInputChange}
                         className="border-b-2 border-gray-300 bg-transparent py-1 px-2 focus:outline-none focus:border-blue-500 w-32"
-                        placeholder="Add text"
                       />
                       <span>{textCleanText.line_to_right}</span>
                     </div>
@@ -568,7 +566,6 @@ const PageComponent = ({
                         value={findText}
                         onChange={handleInputChange}
                         className="border-b-2 border-gray-300 bg-transparent py-1 px-2 focus:outline-none focus:border-blue-500 w-32"
-                        placeholder="Find text"
                       />
                       <span>{textCleanText.find_replace_text}</span>
                       <input
@@ -577,7 +574,6 @@ const PageComponent = ({
                         value={replaceText}
                         onChange={handleInputChange}
                         className="border-b-2 border-gray-300 bg-transparent py-1 px-2 focus:outline-none focus:border-blue-500 w-32"
-                        placeholder="Replace text"
                       />
                     </div>
                     <div className="flex items-center space-x-2 mb-2">
@@ -593,7 +589,6 @@ const PageComponent = ({
                         step="1"
                         inputMode="numeric"
                         pattern="\d*"
-                        placeholder="Space count"
                       />
                       <span>{textCleanText.find_replace_with_tab}</span>
                     </div>
@@ -610,7 +605,6 @@ const PageComponent = ({
                         step="1"
                         inputMode="numeric"
                         pattern="\d*"
-                        placeholder="Tab count"
                       />
                       <span>{textCleanText.find_replace_space}</span>
                     </div>
