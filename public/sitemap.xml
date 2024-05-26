@@ -1,63 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.text-format.com</loc>
+    <loc>https://text-format.com</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.text-format.com/zh</loc>
+    <loc>https://text-format.com/zh</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.text-format.com/ja</loc>
+    <loc>https://text-format.com/ja</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.text-format.com/ko</loc>
+    <loc>https://text-format.com/ko</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.text-format.com/ar</loc>
+    <loc>https://text-format.com/ar</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.text-format.com/de</loc>
+    <loc>https://text-format.com/de</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.text-format.com/privacy-policy</loc>
+    <loc>https://text-format.com/privacy-policy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.1</priority>
   </url>
   <url>
-    <loc>https://www.text-format.com/zh/privacy-policy</loc>
+    <loc>https://text-format.com/zh/privacy-policy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.1</priority>
   </url>
   <url>
-    <loc>https://www.text-format.com/ja/privacy-policy</loc>
+    <loc>https://text-format.com/ja/privacy-policy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.1</priority>
   </url>
   <url>
-    <loc>https://www.text-format.com/ko/privacy-policy</loc>
+    <loc>https://text-format.com/ko/privacy-policy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.1</priority>
   </url>
   <url>
-    <loc>https://www.text-format.com/ar/privacy-policy</loc>
+    <loc>https://text-format.com/ar/privacy-policy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.1</priority>
   </url>
   <url>
-    <loc>https://www.text-format.com/de/privacy-policy</loc>
+    <loc>https://text-format.com/de/privacy-policy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.1</priority>
   </url>
