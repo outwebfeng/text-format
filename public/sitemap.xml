@@ -21,6 +21,17 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.text-format.com/ar</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.text-format.com/de</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://www.text-format.com/privacy-policy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.1</priority>
@@ -37,6 +48,16 @@
   </url>
   <url>
     <loc>https://www.text-format.com/ko/privacy-policy</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.1</priority>
+  </url>
+  <url>
+    <loc>https://www.text-format.com/ar/privacy-policy</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.1</priority>
+  </url>
+  <url>
+    <loc>https://www.text-format.com/de/privacy-policy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.1</priority>
   </url>
