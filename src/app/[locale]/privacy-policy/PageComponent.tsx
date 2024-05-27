@@ -44,7 +44,7 @@ const PageComponent = ({
             <p>{privacyPolicyLanguageText.h4_5_p}</p>
             <h4 className={"text-white font-bold"}>{privacyPolicyLanguageText.h4_6}</h4>
             <p>
-              {privacyPolicyLanguageText.h4_6_p}{" "}<a href="mailto:support@text-format.com" className={"text-white"}>support@text-format.com</a>.
+              {privacyPolicyLanguageText.h4_6_p}{" "}<a href="mailto:text@format.freeqiye.com" className={"text-white"}>text@format.freeqiye.com</a>.
             </p>
           </div>
         </main>

@@ -1,5 +1,5 @@
 'use client'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import {Dialog} from '@headlessui/react'
 import {Bars3Icon, XMarkIcon} from '@heroicons/react/24/outline'
 import {GlobeAltIcon} from '@heroicons/react/24/outline'
@@ -110,6 +110,12 @@ export default function Header({
             </a>
           ))}
         </div>
+        <div id="kofi-button" className="mr-4">
+          <a href='https://ko-fi.com/F1F8YKAKB' target='_blank'>
+            <img style={{ textAlign: 'center', color: 'red', border: '0', height: '36px' }} src='https://storage.ko-fi.com/cdn/kofi4.png?v=3' 
+            alt='Buy Me a Coffee at ko-fi.com' />
+          </a>
+        </div>
         <Menu as="div" className="relative inline-block text-left">
           <div>
             <Menu.Button
@@ -154,7 +160,7 @@ export default function Header({
           </Transition>
         </Menu>
       </nav>
-                    <div className="flex justify-center items-center space-x-3 border-t border-gray-200 px-2 py-2"></div>
+      <div className="flex justify-center items-center space-x-3 border-t border-gray-200 px-2 py-2"></div>
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
         <div className="fixed inset-0 z-10"/>
         <Dialog.Panel
