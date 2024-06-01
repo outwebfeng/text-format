@@ -1,32 +1,7 @@
-# TODO
+# Text-Format
+Text-Format 是一个一体化的文本清理和文本格式化在线工具，可以执行许多简单和复杂的文本操作，包括格式化文本、清理文本、删除换行符、剥离 HTML、转换大小写、查找和替换文本。使用 Text-Format 可以让你快速获得干净整洁的文本内容，而不需要进行繁琐的手工操作。
 
-# SoraWebui
-SoraWebui 是一个开源项目，允许用户使用 OpenAI 的 Sora 模型使用文本在线生成视频，从而简化视频创建，并具有轻松的一键网站部署功能。
-👉 [SoraWebui](https://sorawebui.com)
-
-[English](https://github.com/SoraWebui/SoraWebui/blob/login/README.md) | 简体中文 | [日本語](https://github.com/SoraWebui/SoraWebui/blob/login/README.ja-JP.md)
-
-# 项目计划
-- ✅ 通过文字生成视频（使用[FakeSoraAPI](https://github.com/SoraWebui/FakeSoraAPI)）:
-
-  您可以在 👉 [main](https://github.com/SoraWebui/SoraWebui/tree/main) 或 👉 [version-0.1](https://github.com/SoraWebui/SoraWebui/tree/version-0.1) 中体验该功能
-
-- ✅ 使用谷歌登录:
-
-  您可以在 👉 [login](https://github.com/SoraWebui/SoraWebui/tree/login) 或 👉 [version-0.2](https://github.com/SoraWebui/SoraWebui/tree/version-0.2) 中体验该功能
-
-- ✅ Google 一键登录:
-
-  您可以在 👉 [login](https://github.com/SoraWebui/SoraWebui/tree/login) 或 👉 [version-0.3](https://github.com/SoraWebui/SoraWebui/tree/version-0.3) 中体验该功能
-
-- [ ] Stripe支付：
-
-  即将推出
-
-- [ ] 添加 OpenAI 的 Sora API：
-
-  等待 OpenAI 开放 Sora 的 API，随后我们就会推出该功能.
-
+👉 [Text-Format](https://text-format.com) 英文 | [简体中文](https://github.com/outwebfeng/text-format/blob/main/README.zh-CN.md) 
 
 ## 快速开始
 
@@ -36,49 +11,39 @@ SoraWebui 是一个开源项目，允许用户使用 OpenAI 的 Sora 模型使�
 ### 1. 克隆项目
 
 ```bash
-git clone git@github.com:SoraWebui/SoraWebui.git
+git clone git@github.com:outwebfeng/text-format.git
 ```
 
 ### 2. 安装依赖
 
 ```bash
-cd SoraWebui && yarn
-#or
-cd SoraWebui && npm install
-#or
-cd SoraWebui && pnpm install
+cd text-format && yarn
+#或
+cd text-format && npm install
+#或
+cd text-format && pnpm install
 ```
 
-### 3. 复制 .env.example 并将其重命名为 .env.local
+### 3. 复制 .env.example 并重命名为 .env.local
 
 ```bash
-# website URL
+# 网站 URL
 NEXT_PUBLIC_SITE_URL=http://localhost
-
 ```
-### 4. 额外的配置
 
-1) Google auth config 👉 [Google-Auth-Help](https://github.com/SoraWebui/SoraWebui/blob/login/help/Google-Auth.zh-CN.md)
-
-2) vercel postgres config 👉 [vercel-postgres-Help](https://github.com/SoraWebui/SoraWebui/blob/login/help/vercel-postgres.zh-CN.md)
-
-### 5. 运行
+### 4. 运行项目
 
 ```bash
 yarn dev
-#or
+#或
 npm run dev
-#or
+#或
 pnpm dev
 ```
 
-### 6. 在浏览器打开 [http://localhost](http://localhost)
-![success_deploy.jpg](https://sorawebui.com/success_deploy.jpg)
+### 5. 打开 [http://localhost](http://localhost) 并使用浏览器查看。
+![success_deploy.jpg](https://text-format.com/success_deploy.jpg)
 
+## Star 历史
 
-# 重要事项
-SoraWebui 需要 [FakeSoraAPI](https://github.com/SoraWebui/FakeSoraAPI) 才能正常运行。
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=SoraWebui/SoraWebui&type=Date)](https://star-history.com/#SoraWebui/SoraWebui&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=outwebfeng/text-format&type=Date)](https://star-history.com/#outwebfeng/text-format&Date)

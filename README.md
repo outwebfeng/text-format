@@ -1,31 +1,7 @@
-# TODO
-# SoraWebui
-SoraWebui is an open-source project that simplifies video creation by allowing users to generate videos online with OpenAI's Sora model using text, featuring easy one-click website deployment.
-👉 [SoraWebui](https://sorawebui.com)
+# Text-Format
+Text-Format is an all-in-one text cleaning and text formatting online tool that can perform many simple and complex text operations including format text, clean text, remove line breaks, strip HTML, convert case, find and replace text. Using Text-Format allows you to quickly get a clean and tidy text content without having to do tedious manual work.
 
-English | [简体中文](https://github.com/SoraWebui/SoraWebui/blob/login/README.zh-CN.md) | [日本語](https://github.com/SoraWebui/SoraWebui/blob/login/README.ja-JP.md)
-
-
-# Project Plan
-- ✅ Generate video by words(Use [FakeSoraAPI](https://github.com/SoraWebui/FakeSoraAPI)):
-
-  You can see this feature in 👉 [main](https://github.com/SoraWebui/SoraWebui/tree/main) or 👉 [version-0.1](https://github.com/SoraWebui/SoraWebui/tree/version-0.1)
-
-- ✅ Login with Google:
-
-  You can see this feature in 👉 [login](https://github.com/SoraWebui/SoraWebui/tree/login) or 👉 [version-0.2](https://github.com/SoraWebui/SoraWebui/tree/version-0.2)
-
-- ✅ Google One Tap Login:
-
-  You can see this feature in 👉 [login](https://github.com/SoraWebui/SoraWebui/tree/login) or 👉 [version-0.3](https://github.com/SoraWebui/SoraWebui/tree/version-0.3)
-
-- [ ] Stripe payment：
-
-  Coming soon
-
-- [ ] Add OpenAI’s Sora API：
-
-  Waiting for OpenAI launch Sora's API, then we will launch this feature.
+👉 [Text-Format](https://text-format.com) English | [简体中文](https://github.com/outwebfeng/text-format/blob/main/README.zh-CN.md) 
 
 
 ## Quick Started
@@ -36,17 +12,17 @@ English | [简体中文](https://github.com/SoraWebui/SoraWebui/blob/login/READM
 ### 1. Clone project
 
 ```bash
-git clone git@github.com:SoraWebui/SoraWebui.git
+git clone git@github.com:outwebfeng/text-format.git
 ```
 
 ### 2. Install dependencies
 
 ```bash
-cd SoraWebui && yarn
+cd text-format && yarn
 #or
-cd SoraWebui && npm install
+cd text-format && npm install
 #or
-cd SoraWebui && pnpm install
+cd text-format && pnpm install
 ```
 
 ### 3. copy .env.example and rename it to .env.local
@@ -56,13 +32,8 @@ cd SoraWebui && pnpm install
 NEXT_PUBLIC_SITE_URL=http://localhost
 
 ```
-### 4. Additional configuration
 
-1) Google auth config 👉 [Google-Auth-Help](https://github.com/SoraWebui/SoraWebui/blob/login/help/Google-Auth.md)
-
-2) vercel postgres config 👉 [vercel-postgres-Help](https://github.com/SoraWebui/SoraWebui/blob/login/help/vercel-postgres.md)
-
-### 5. Run it
+### 4. Run it
 
 ```bash
 yarn dev
@@ -72,13 +43,11 @@ npm run dev
 pnpm dev
 ```
 
-### 6. Open [http://localhost](http://localhost) with your browser to see it.
-![success_deploy.jpg](https://sorawebui.com/success_deploy.jpg)
+### 5. Open [http://localhost](http://localhost) with your browser to see it.
+![success_deploy.jpg](https://text-format.com/success_deploy.jpg)
 
 
-# Important
-SoraWebui requires [FakeSoraAPI](https://github.com/SoraWebui/FakeSoraAPI) to function properly.
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=SoraWebui/SoraWebui&type=Date)](https://star-history.com/#SoraWebui/SoraWebui&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=outwebfeng/text-format&type=Date)](https://star-history.com/#outwebfeng/text-format&Date)
