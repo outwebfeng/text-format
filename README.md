@@ -1,7 +1,7 @@
 # Text-Format
 Text-Format is an all-in-one text cleaning and text formatting online tool that can perform many simple and complex text operations including format text, clean text, remove line breaks, strip HTML, convert case, find and replace text. Using Text-Format allows you to quickly get a clean and tidy text content without having to do tedious manual work.
 
-👉 [Text-Format](https://text-format.com) English | [简体中文](https://github.com/outwebfeng/text-format/blob/main/README.zh-CN.md) 
+👉 [Text-Format](https://text-format.com) [English](https://github.com/outwebfeng/text-format/blob/main/README.md)  | [简体中文](https://github.com/outwebfeng/text-format/blob/main/README.zh-CN.md) 
 
 
 ## Quick Started
