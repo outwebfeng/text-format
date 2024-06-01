@@ -42,7 +42,7 @@ pnpm dev
 ```
 
 ### 5. 打开 [http://localhost](http://localhost) 并使用浏览器查看。
-![success_deploy.jpg](https://text-format.com/success_deploy.jpg)
+![success_deploy.jpg](https://text-format.com/success_deploy.png)
 
 ## Star 历史
 
