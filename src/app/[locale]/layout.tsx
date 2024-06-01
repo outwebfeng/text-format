@@ -21,28 +21,33 @@ export default async function LocaleLayout({
   children,
   params: { locale }
 }: Props) {
-
   // Validate that the incoming `locale` parameter is valid
   if (!locales.includes(locale as any)) notFound();
 
   // Enable static rendering
   unstable_setRequestLocale(locale);
 
+  // Get Google Analytics ID from environment variables
+  const googleAnalyticsId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
 
   return (
     <html className="h-full" lang={locale}>
       <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BR1V1TKLEK"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
+        {googleAnalyticsId && (
+          <>
+            <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}></script>
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
                   gtag('js', new Date());
-                  gtag('config', 'G-BR1V1TKLEK');
-                  `,
-          }}
-        />
+                  gtag('config', '${googleAnalyticsId}');
+                `,
+              }}
+            />
+          </>
+        )}
       </head>
       <body suppressHydrationWarning={true} className={clsx(inter.className, 'flex h-full flex-col bg-[#020d24]')}>
         <CommonProvider>
