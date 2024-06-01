@@ -46,7 +46,7 @@ pnpm dev
 
 
 ## 请作者喝个咖啡
-[捐赠一杯咖啡](https://ko-fi.com/F1F8YKAKB)
+[![捐赠一杯咖啡](https://storage.ko-fi.com/cdn/kofi4.png?v=3)](https://ko-fi.com/F1F8YKAKB)
 
 ## Star 历史
 

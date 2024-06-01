@@ -48,7 +48,8 @@ pnpm dev
 
 
 ## Buy Me a Coffee
-[donate a coffee](https://ko-fi.com/F1F8YKAKB)
+[![Buy Me a Coffee](https://storage.ko-fi.com/cdn/kofi4.png?v=3)](https://ko-fi.com/F1F8YKAKB)
+
 
 
 ## Star History
