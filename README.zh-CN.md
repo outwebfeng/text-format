@@ -44,6 +44,10 @@ pnpm dev
 ### 5. 打开 [http://localhost](http://localhost) 并使用浏览器查看。
 ![success_deploy.jpg](https://text-format.com/success_deploy.png)
 
+
+## 请作者喝个咖啡
+[捐赠一杯咖啡](https://ko-fi.com/F1F8YKAKB)
+
 ## Star 历史
 
 [![Star History Chart](https://api.star-history.com/svg?repos=outwebfeng/text-format&type=Date)](https://star-history.com/#outwebfeng/text-format&Date)

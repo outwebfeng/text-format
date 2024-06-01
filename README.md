@@ -47,6 +47,9 @@ pnpm dev
 ![success_deploy.jpg](https://text-format.com/success_deploy.png)
 
 
+## Buy Me a Coffee
+[donate a coffee](https://ko-fi.com/F1F8YKAKB)
+
 
 ## Star History
 
