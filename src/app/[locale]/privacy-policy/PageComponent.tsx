@@ -5,8 +5,7 @@ import HeadInfo from "~/components/HeadInfo";
 const PageComponent = ({
                          locale = '',
                          privacyPolicyLanguageText,
-                         indexLanguageText,
-                         textCleanText
+                         indexLanguageText
                        }) => {
 
   return (
