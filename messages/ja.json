@@ -3,10 +3,10 @@
     "lang": "ja",
     "language": "日本語",
     "languageInChineseSimple": "日本語",
-    "title": "テキストクリーン、テキストクリーナー、テキストフォーマット、テキストフォーマットクリーナー",
-    "description": "テキストフォーマットは、テキストをフォーマットし、テキストフォーマットクリーナー、改行の削除、HTMLの削除、文字の削除、大文字への変換、小文字への変換、オンラインでのテキストの置換を行うオンラインツールです。",
-    "keywords": "テキストクリーン、テキストクリーナー、テキストフォーマット、テキストフォーマット、文字の削除、HTMLの削除、各行、テキストの置換",
-
+    "title": "Format Cleaner,Text Online Formatieren,Clean Text Format",
+    "description": "Text-format is Text Formatting online tool to format text,format cleaner,text online formatieren,clean text format,strip HTML,remove characters,replace online.",
+    "keywords": "",
+    
     "loadingText": "読み込み中...",
     "placeholderText": "ここにテキストを入力または貼り付けてください..."
   },

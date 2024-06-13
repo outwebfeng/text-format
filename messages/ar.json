@@ -3,10 +3,10 @@
     "lang": "ar",
     "language": "العربية",
     "languageInChineseSimple": "العربية",
-    "title": "تنظيف النص، منظف النص، تنسيق النص، منظف تنسيق النص",
-    "description": "تنسيق النص هو أداة تنسيق النصوص عبر الإنترنت لتنسيق النصوص، تنظيف تنسيق النصوص، إزالة فواصل الأسطر، إزالة HTML، إزالة الحروف، تحويل الحروف إلى كبيرة، تحويل الحروف إلى صغيرة، استبدال النصوص عبر الإنترنت.",
-    "keywords": "تنظيف النص، منظف النص، تنسيق النص، تنسيق النصوص، إزالة الحروف، إزالة HTML، كل سطر، استبدال النص",
-  
+    "title": "Format Cleaner,Text Online Formatieren,Clean Text Format",
+    "description": "Text-format is Text Formatting online tool to format text,format cleaner,text online formatieren,clean text format,strip HTML,remove characters,replace online.",
+    "keywords": "",
+    
     "loadingText": "جاري التحميل...",
     "placeholderText": "اكتب أو الصق النص هنا..."
   },

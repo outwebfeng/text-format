@@ -3,10 +3,10 @@
     "lang": "hi",
     "language": "हिंदी",
     "languageInChineseSimple": "印地语",
-    "title": "Text Clean,Text cleaner,Text Format,Text Format Cleaner",
-    "description": "Text-format एक ऑनलाइन टूल है जो टेक्स्ट को फॉर्मेट करता है, टेक्स्ट क्लीन करता है, लाइन ब्रेक हटाता है, HTML स्ट्रिप करता है, कैरेक्टर्स हटाता है, अपरकेस, लोअरकेस, टेक्स्ट को ऑनलाइन रिप्लेस करता है।",
-    "keywords": "Text Clean,Text cleaner,Text Format,Txt Format,remove characters,strip HTML,each line,replace text",
-     
+    "title": "Format Cleaner,Text Online Formatieren,Clean Text Format",
+    "description": "Text-format is Text Formatting online tool to format text,format cleaner,text online formatieren,clean text format,strip HTML,remove characters,replace online.",
+    "keywords": "",
+    
     "loadingText": "लोड हो रहा है...",
     "placeholderText": "यहां टेक्स्ट टाइप करें या पेस्ट करें..."
   },

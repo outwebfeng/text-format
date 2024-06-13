@@ -3,9 +3,10 @@
     "lang": "en",
     "language": "Urdu",
     "languageInChineseSimple": "乌尔都语",
-    "title": "ٹیکسٹ کلین، ٹیکسٹ کلینر، ٹیکسٹ فارمیٹ، ٹیکسٹ فارمیٹ کلینر",
-    "description": "ٹیکسٹ فارمیٹ ایک آن لائن ٹول ہے جو ٹیکسٹ کو فارمیٹ کرنے، ٹیکسٹ کو کلین کرنے، لائن بریکس کو ہٹانے، HTML کو ہٹانے، کرداروں کو ہٹانے، اپر کیس، لوئر کیس، اور آن لائن ٹیکسٹ کو تبدیل کرنے کے لئے استعمال ہوتا ہے۔",
-    "keywords": "ٹیکسٹ کلین، ٹیکسٹ کلینر، ٹیکسٹ فارمیٹ، ٹیکسٹ فارمیٹ کلینر، کرداروں کو ہٹانا، HTML کو ہٹانا، ہر لائن، ٹیکسٹ کو تبدیل کرنا",
+    "title": "Format Cleaner,Text Online Formatieren,Clean Text Format",
+    "description": "Text-format is Text Formatting online tool to format text,format cleaner,text online formatieren,clean text format,strip HTML,remove characters,replace online.",
+    "keywords": "",
+    
     "loadingText": "لوڈ ہو رہا ہے...",
     "placeholderText": "یہاں ٹیکسٹ ٹائپ کریں یا پیسٹ کریں..."
   },
