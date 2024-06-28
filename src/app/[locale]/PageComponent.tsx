@@ -353,7 +353,6 @@ const PageComponent = ({
                       placeholder={textCleanText.default_text}
                       value={textStr}
                       onChange={(e) => setTextStr(e.target.value)}
-                      maxLength={10000}
                     />
                   </div>
 

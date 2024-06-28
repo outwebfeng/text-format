@@ -11,7 +11,7 @@
     "placeholderText": "Type or paste text here..."
   },
   "textClean": {
-    "h1": "Text Clean and Text Format",
+    "h1": "Text Clean and Text Format and Format Cleaner",
     "h1_desc": "Text-Format is an all-in-one text cleaning and text formatting online tool that can perform many simple and complex text operations including format text, clean text, remove line breaks, strip HTML, convert case, find and replace text. Using Text-Format allows you to quickly get a clean and tidy text content without having to do tedious manual work.",
     "wrap_lines": "Wrap lines",
     "default_text": "Welcome to Text-Format. Paste your text here ",
@@ -59,8 +59,8 @@
     "find_replace_space": "space/s",
     "text_clean_apply": "Clean Text",
     
-    "h2_1": "What is Text-Format?",
-    "h2_1_p": "Text-Format is a powerful web-based tool designed to manipulate and format text according to user preferences. This tool offers a range of functionalities including the removal of punctuation, emojis, non-ASCII characters, and emails, as well as HTML tag manipulation and line-based operations. Whether you need to clean up text for analysis, prepare content for publication, or just enhance readability, Text-Format provides an intuitive interface and a comprehensive set of features to meet your text processing needs.",
+    "h2_1": "What is Text-Format & Format Cleaner?",
+    "h2_1_p": "Text-Format & Format Cleaner is a powerful web-based tool designed to manipulate and format text according to user preferences. This tool offers a range of functionalities including the removal of punctuation, emojis, non-ASCII characters, and emails, as well as HTML tag manipulation and line-based operations. Whether you need to clean up text for analysis, prepare content for publication, or just enhance readability, Text-Format provides an intuitive interface and a comprehensive set of features to meet your text processing needs.",
     "h2_2": "How to Use Text-Format?",
     "h2_2_p": "Using Text-Format is straightforward and user-friendly. Here’s a step-by-step guide to help you get started:",
     "h2_2_h3_1": "Input Your Text",
