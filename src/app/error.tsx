@@ -1,6 +1,7 @@
 'use client';
 
 import {useEffect} from 'react';
+import Link from 'next/link';
 
 type Props = {
   error: Error;
@@ -14,6 +15,9 @@ export default function Error({error, reset}: Props) {
   }, [error]);
 
   return (
-    <div>not found</div>
-  );
+      <div>
+        <div>Something is error!</div>
+        <Link href="https://text-format.com">Go back to Text-Format Home</Link>
+      </div>
+    );
 }
