@@ -101,13 +101,6 @@ export default function Header({
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:mr-2">
-          
-        <div id="kofi-button" className="mr-4">
-          <a href='https://ko-fi.com/F1F8YKAKB' target='_blank'>
-            <img style={{ textAlign: 'center', color: 'red', border: '0', height: '36px' }} src='https://storage.ko-fi.com/cdn/kofi4.png?v=3' 
-            alt='Buy Me a Coffee at ko-fi.com' />
-          </a>
-        </div>
         
           {navigation.social.map((item) => (
             <a key={item.name} href={item.href} target={"_blank"} className="text-gray-500 hover:text-gray-400">
