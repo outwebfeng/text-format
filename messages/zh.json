@@ -3,9 +3,9 @@
     "lang": "zh",
     "language": "中文",
     "languageInChineseSimple": "中文",
-    "title": "格式清理器，在线文本格式化，清理文本格式",
+    "title": "格式清理器，在线文本格式化，文本格式化工具",
     "description": "Text-format 是一个在线文本格式化工具，用于格式化文本、清理格式、在线文本格式化、清理文本格式、去除 HTML、删除字符、在线替换。",
-    "keywords": "",
+    "keywords": "格式清理器，在线文本格式化，文本格式化工具",
     
     "loadingText": "加载中...",
     "placeholderText": "在此输入或粘贴文本..."
