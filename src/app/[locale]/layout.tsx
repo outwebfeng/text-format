@@ -51,12 +51,14 @@ export default async function LocaleLayout({
             />
           </>
         )}
-        <script
-          async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${googleAdsenseClientId}`}
-          crossOrigin="anonymous"
-        ></script>
-        <meta name="google-adsense-account" content="${googleAdsenseClientId}"></meta>
+        {googleAdsenseClientId && (
+          <script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${googleAdsenseClientId}`}
+            crossOrigin="anonymous"
+          ></script>
+        )}
+        {googleAdsenseClientId && (<meta name="google-adsense-account" content={googleAdsenseClientId}></meta>)}
       </head>
       <body suppressHydrationWarning={true} className={clsx(inter.className, 'flex h-full flex-col bg-[#020d24]')}>
         <CommonProvider>
