@@ -5,7 +5,6 @@ import { useState } from "react";
 import HeadInfo from "~/components/HeadInfo";
 import confetti from 'canvas-confetti';
 
-
 const PageComponent = ({
   locale = "",
   indexLanguageText,
@@ -246,8 +245,6 @@ const PageComponent = ({
     setTabCount(0);
   };
 
-
-
   const removeExtraSpaces = () => {
     setTextStr(textStr.replace(/\s+/g, " ").trim());
   };
@@ -356,7 +353,7 @@ const PageComponent = ({
                     />
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 px-2 py-2 bg-white text-black">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 px-2 py-2 bg-white text-black">
                     {buttons.map((button, index) => (
                       <button
                         key={index}
@@ -634,7 +631,6 @@ const PageComponent = ({
                 </form>
               </div>
             </div>
-
 
             <div className="w-[95%] mx-auto h-full my-8 text-white w-full max-w-5xl mx-auto">
               <h2 className="text-2xl mb-4">{textCleanText.h2_1}</h2>

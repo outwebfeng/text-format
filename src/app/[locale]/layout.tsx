@@ -30,6 +30,9 @@ export default async function LocaleLayout({
   // Get Google Analytics ID from environment variables
   const googleAnalyticsId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
 
+  // 获取谷歌广告客户端 ID
+  const googleAdsenseClientId = process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT_ID;
+
   return (
     <html className="h-full" lang={locale}>
       <head>
@@ -48,11 +51,34 @@ export default async function LocaleLayout({
             />
           </>
         )}
+        
+        {googleAdsenseClientId && (
+          <script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${googleAdsenseClientId}`}
+            crossOrigin="anonymous"
+          ></script>
+        )}
       </head>
       <body suppressHydrationWarning={true} className={clsx(inter.className, 'flex h-full flex-col bg-[#020d24]')}>
         <CommonProvider>
           {children}
         </CommonProvider>
+        
+        {/* 广告容器示例 */}
+        {googleAdsenseClientId && (
+          <div className="ad-container">
+            <ins className="adsbygoogle"
+                 style={{ display: 'block' }}
+                 data-ad-client={googleAdsenseClientId}
+                 data-ad-slot="YOUR_AD_SLOT_ID"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+          </div>
+        )}
       </body>
     </html>
   );
