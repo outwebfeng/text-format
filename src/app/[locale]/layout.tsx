@@ -51,34 +51,17 @@ export default async function LocaleLayout({
             />
           </>
         )}
-        
-        {googleAdsenseClientId && (
-          <script
-            async
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${googleAdsenseClientId}`}
-            crossOrigin="anonymous"
-          ></script>
-        )}
+        <script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${googleAdsenseClientId}`}
+          crossOrigin="anonymous"
+        ></script>
+        <meta name="google-adsense-account" content="${googleAdsenseClientId}"></meta>
       </head>
       <body suppressHydrationWarning={true} className={clsx(inter.className, 'flex h-full flex-col bg-[#020d24]')}>
         <CommonProvider>
           {children}
         </CommonProvider>
-        
-        {/* 广告容器示例 */}
-        {googleAdsenseClientId && (
-          <div className="ad-container">
-            <ins className="adsbygoogle"
-                 style={{ display: 'block' }}
-                 data-ad-client={googleAdsenseClientId}
-                 data-ad-slot="YOUR_AD_SLOT_ID"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-              (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-          </div>
-        )}
       </body>
     </html>
   );
