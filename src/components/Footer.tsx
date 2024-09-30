@@ -23,15 +23,6 @@ export default function Footer({
       <div className="mx-auto max-w-7xl px-6 py-4">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
-            {/* <a href={`/${locale}`}>
-              <Image
-                className="h-10"
-                src="/webui.svg"
-                width={32}
-                height={32}
-                alt="text-format.com"
-              />
-            </a> */}
             <p className="text-sm text-gray-300">
               {description}
             </p>
