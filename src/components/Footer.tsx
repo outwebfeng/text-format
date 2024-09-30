@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const navigation = {
   product: [
-    {name: 'Text-Format', href: 'https://text-format.com'}
+    {name: 'KYI AI', href: 'https://kyi.ai'},
   ],
   legal: [
     {name: 'Privacy Policy', href: '/privacy-policy'},
