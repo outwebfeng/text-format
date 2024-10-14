@@ -6,3 +6,43 @@ Disallow: /api*
 Disallow: /*/api
 Disallow: /*/api/
 Disallow: /*/api*
+
+# 阻止包含undefined的URL
+Disallow: */undefined*
+Disallow: *undefined*
+
+# 阻止错误的canonical URL
+Disallow: *canonical
+
+# 阻止特定语言组合的错误URL
+Disallow: /*/undefined/*/privacy-policy
+Disallow: /undefined/*/privacy-policy
+Disallow: /*/undefined/privacy-policy
+
+# 阻止特定语言的undefined路径
+Disallow: /ja/undefined
+Disallow: /de/undefined
+Disallow: /ko/undefined
+Disallow: /zh/undefined
+Disallow: /ar/undefined
+Disallow: /pk/undefined
+Disallow: /in/undefined
+
+# 阻止根目录下的undefined
+Disallow: /undefined
+
+# 阻止特定语言目录下的undefined
+Disallow: /undefined/de
+Disallow: /undefined/in
+Disallow: /undefined/pk
+Disallow: /undefined/zh
+Disallow: /undefined/ja
+Disallow: /undefined/ar
+Disallow: /undefined/ko
+
+# 确保privacy-policy页面的正确版本可以被爬取
+Allow: /*/privacy-policy
+
+# 处理 Duplicate without user-selected canonical  
+Disallow: /*?ref=*
+Disallow: /*?ref=*
