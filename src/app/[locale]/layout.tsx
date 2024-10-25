@@ -5,6 +5,7 @@ import { unstable_setRequestLocale } from 'next-intl/server';
 import { ReactNode } from 'react';
 import { locales } from '~/config';
 import { CommonProvider } from '~/context/common-context';
+import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -38,21 +39,19 @@ export default async function LocaleLayout({
       <head>
         {googleAnalyticsId && (
           <>
-            <script async src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}></script>
-            <script
-              dangerouslySetInnerHTML={{
-                __html: `
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-                  gtag('config', '${googleAnalyticsId}');
-                `,
-              }}
-            />
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`} strategy="afterInteractive" />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${googleAnalyticsId}');
+              `}
+            </Script>
           </>
         )}
         {/* Adsterra广告脚本 */}
-        <script type='text/javascript' src={adsterraScriptUrl}></script>
+        <Script src={adsterraScriptUrl} strategy="lazyOnload" />
       </head>
       <body suppressHydrationWarning={true} className={clsx(inter.className, 'flex h-full flex-col bg-[#020d24]')}>
         <CommonProvider>
