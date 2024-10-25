@@ -30,8 +30,8 @@ export default async function LocaleLayout({
   // Get Google Analytics ID from environment variables
   const googleAnalyticsId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
 
-  // 获取谷歌广告客户端 ID
-  const googleAdsenseClientId = process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT_ID;
+  // Adsterra广告脚本URL
+  const adsterraScriptUrl = '//pl24803035.profitablecpmrate.com/10/eb/65/10eb6577bb5a8e557e3688d369c63fbd.js';
 
   return (
     <html className="h-full" lang={locale}>
@@ -51,14 +51,8 @@ export default async function LocaleLayout({
             />
           </>
         )}
-        {googleAdsenseClientId && (
-          <script
-            async
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${googleAdsenseClientId}`}
-            crossOrigin="anonymous"
-          ></script>
-        )}
-        {googleAdsenseClientId && (<meta name="google-adsense-account" content={googleAdsenseClientId}></meta>)}
+        {/* Adsterra广告脚本 */}
+        <script type='text/javascript' src={adsterraScriptUrl}></script>
       </head>
       <body suppressHydrationWarning={true} className={clsx(inter.className, 'flex h-full flex-col bg-[#020d24]')}>
         <CommonProvider>
