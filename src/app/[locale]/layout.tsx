@@ -31,10 +31,6 @@ export default async function LocaleLayout({
   // Get Google Analytics ID from environment variables
   const googleAnalyticsId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
 
-  // Adsterra广告脚本URL
-  const socialBarUrl = '//acceptvigorously.com/c0/b5/da/c0b5da91d751e2aeacc58d0d86058c55.js';
-  const popunderUrl = '//acceptvigorously.com/10/eb/65/10eb6577bb5a8e557e3688d369c63fbd.js';
-
   return (
     <html className="h-full" lang={locale}>
       <head>
@@ -51,9 +47,6 @@ export default async function LocaleLayout({
             </Script>
           </>
         )}
-        {/* Adsterra广告脚本 */}
-        <Script src={socialBarUrl} strategy="lazyOnload" />
-        <Script src={popunderUrl} strategy="lazyOnload" />
       </head>
       <body suppressHydrationWarning={true} className={clsx(inter.className, 'flex h-full flex-col bg-[#020d24]')}>
         <CommonProvider>
