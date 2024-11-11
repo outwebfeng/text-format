@@ -136,7 +136,7 @@ const PageComponent = ({
       modifiedText = modifiedText.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "");
     }
     if (stripEmojis) {
-      modifiedText = modifiedText.replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{FE00}-\u{FE0F}\u{1F900}-\u{1F9FF}\u{200D}\u{2300}-\u{23FF}\u{2B00}-\u{2BFF}]/gu, "");
+      modifiedText = modifiedText.replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]|[\u2600-\u27FF]|[\uFE00-\uFE0F]/g, "");
     }
     if (removeNonASCII) {
       modifiedText = modifiedText.replace(/[^\x00-\x7F]/g, "");

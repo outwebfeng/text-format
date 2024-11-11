@@ -41,36 +41,4 @@
     <priority>0.8</priority>
   </url>
 
-  <url>
-    <loc>https://text-format.com/privacy-policy</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.1</priority>
-  </url>
-  <url>
-    <loc>https://text-format.com/zh/privacy-policy</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.1</priority>
-  </url>
-  <url>
-    <loc>https://text-format.com/ja/privacy-policy</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.1</priority>
-  </url>
-  <url>
-    <loc>https://text-format.com/ko/privacy-policy</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.1</priority>
-  </url>
-  <url>
-    <loc>https://text-format.com/ar/privacy-policy</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.1</priority>
-  </url>
-  <url>
-    <loc>https://text-format.com/de/privacy-policy</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.1</priority>
-  </url>
-
-
 </urlset>
