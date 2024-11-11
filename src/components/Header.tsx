@@ -14,9 +14,6 @@ import LoadingModal from "./LoadingModal";
 const navigation = {
   topMenu: [
     {name: 'Text Clean', href: '/'},
-    {name: 'ChatGPTs', href: 'https://chatgpt.com/g/g-XjtulLqWu-text-format'},
-    // {name: 'Works', href: '/works'},
-    // {name: 'Videos', href: '/videos'},
   ],
   social: [
     {

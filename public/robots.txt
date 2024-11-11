@@ -10,8 +10,3 @@ Disallow: /undefined/
 
 Disallow: /*/privacy-policycanonical/
 Disallow: /privacy-policycanonical/
-
-
-# 处理 Duplicate without user-selected canonical  
-Disallow: /*?ref=*
-Disallow: /*?ref=*
