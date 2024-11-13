@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const navigation = {
   product: [
-    {name: 'KYI AI', href: 'https://kyi.ai'},
+    {name: 'letreiro', href: 'https://letreiro.org'},
   ],
   legal: [
     {name: 'Privacy Policy', href: '/privacy-policy'},
