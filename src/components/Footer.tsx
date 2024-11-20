@@ -3,6 +3,7 @@ import Link from "next/link";
 const navigation = {
   product: [
     {name: 'letreiro', href: 'https://letreiro.org'},
+    {name: 'holocure', href: 'https://holocure.fun'},
   ],
   legal: [
     {name: 'Privacy Policy', href: '/privacy-policy'},
