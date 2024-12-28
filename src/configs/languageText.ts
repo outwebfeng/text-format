@@ -219,3 +219,44 @@ export async function getDeleteFormatText() {
     faq_6_desc: deleteFormat('faq_6_desc')
   };
 }
+
+export const getFormatHtmlText = async () => {
+  const t = await getTranslations('formatHtml');
+  return {
+    title: t('title'),
+    description: t('description'),
+    keywords: t('keywords'),
+    h1: t('h1'),
+    h1_desc: t('h1_desc'),
+    default_text: t('default_text'),
+    format: t('format'),
+    copy: t('copy'),
+    clear: t('clear'),
+    about_title: t('about_title'),
+    about_desc: t('about_desc'),
+    features_title: t('features_title'),
+    feature_1_title: t('feature_1_title'),
+    feature_1_desc: t('feature_1_desc'),
+    feature_2_title: t('feature_2_title'),
+    feature_2_desc: t('feature_2_desc'),
+    feature_3_title: t('feature_3_title'),
+    feature_3_desc: t('feature_3_desc'),
+    feature_4_title: t('feature_4_title'),
+    feature_4_desc: t('feature_4_desc'),
+    feature_5_title: t('feature_5_title'),
+    feature_5_desc: t('feature_5_desc'),
+    faq_title: t('faq_title'),
+    faq_1_title: t('faq_1_title'),
+    faq_1_desc: t('faq_1_desc'),
+    faq_2_title: t('faq_2_title'),
+    faq_2_desc: t('faq_2_desc'),
+    faq_3_title: t('faq_3_title'),
+    faq_3_desc: t('faq_3_desc'),
+    faq_4_title: t('faq_4_title'),
+    faq_4_desc: t('faq_4_desc'),
+    faq_5_title: t('faq_5_title'),
+    faq_5_desc: t('faq_5_desc'),
+    faq_6_title: t('faq_6_title'),
+    faq_6_desc: t('faq_6_desc')
+  };
+};

@@ -15,6 +15,7 @@ const navigation = {
   topMenu: [
     {name: 'Text Format', href: '/'},
     {name: 'Delete Format', href: '/deleteformat'},
+    {name: 'Format HTML', href: '/formathtmlonline'},
   ],
   social: [
     {

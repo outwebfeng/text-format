@@ -84,11 +84,11 @@ const DeleteFormatComponent = ({
         description={deleteFormatText.description}
         keywords={deleteFormatText.keywords}
         locale={locale}
-        page={"delete-format"}
+        page={"deleteformat"}
       />
       <Header
         locale={locale}
-        page={"delete-format"}
+        page={"deleteformat"}
         indexLanguageText={indexLanguageText}
       />
       <div className="p-4 space-y-4">
