@@ -13,7 +13,8 @@ import LoadingModal from "./LoadingModal";
 
 const navigation = {
   topMenu: [
-    {name: 'Text Clean', href: '/'},
+    {name: 'text-format', href: '/'},
+    {name: 'delete-format', href: '/delete-format'},
   ],
   social: [
     {

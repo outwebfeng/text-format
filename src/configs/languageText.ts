@@ -171,3 +171,51 @@ export const getPrivacyPolicyLanguageText = async () => {
     h4_6_p: tPrivacyPolicy('h4_6_p'),
   }
 }
+
+export async function getDeleteFormatText() {
+  const deleteFormat = await getTranslations('deleteFormat');
+  return {
+    title: deleteFormat('title'),
+    description: deleteFormat('description'),
+    keywords: deleteFormat('keywords'),
+    h1: deleteFormat('h1'),
+    h1_desc: deleteFormat('h1_desc'),
+    default_text: deleteFormat('default_text'),
+    copy: deleteFormat('copy'),
+    clear: deleteFormat('clear'),
+    format_settings: deleteFormat('format_settings'),
+    remove_spaces: deleteFormat('remove_spaces'),
+    remove_newlines: deleteFormat('remove_newlines'),
+    remove_formatting: deleteFormat('remove_formatting'),
+    remove_indentation: deleteFormat('remove_indentation'),
+    apply: deleteFormat('apply'),
+    about_title: deleteFormat('about_title'),
+    about_desc: deleteFormat('about_desc'),
+    features_title: deleteFormat('features_title'),
+    feature_1_title: deleteFormat('feature_1_title'),
+    feature_1_desc: deleteFormat('feature_1_desc'),
+    feature_2_title: deleteFormat('feature_2_title'),
+    feature_2_desc: deleteFormat('feature_2_desc'),
+    feature_3_title: deleteFormat('feature_3_title'),
+    feature_3_desc: deleteFormat('feature_3_desc'),
+    feature_4_title: deleteFormat('feature_4_title'),
+    feature_4_desc: deleteFormat('feature_4_desc'),
+    feature_5_title: deleteFormat('feature_5_title'),
+    feature_5_desc: deleteFormat('feature_5_desc'),
+    feature_6_title: deleteFormat('feature_6_title'),
+    feature_6_desc: deleteFormat('feature_6_desc'),
+    faq_title: deleteFormat('faq_title'),
+    faq_1_title: deleteFormat('faq_1_title'),
+    faq_1_desc: deleteFormat('faq_1_desc'),
+    faq_2_title: deleteFormat('faq_2_title'),
+    faq_2_desc: deleteFormat('faq_2_desc'),
+    faq_3_title: deleteFormat('faq_3_title'),
+    faq_3_desc: deleteFormat('faq_3_desc'),
+    faq_4_title: deleteFormat('faq_4_title'),
+    faq_4_desc: deleteFormat('faq_4_desc'),
+    faq_5_title: deleteFormat('faq_5_title'),
+    faq_5_desc: deleteFormat('faq_5_desc'),
+    faq_6_title: deleteFormat('faq_6_title'),
+    faq_6_desc: deleteFormat('faq_6_desc')
+  };
+}
