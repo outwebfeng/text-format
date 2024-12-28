@@ -84,7 +84,7 @@ const DeleteFormatComponent = ({
         description={deleteFormatText.description}
         keywords={deleteFormatText.keywords}
         locale={locale}
-        page={"deleteformat"}
+        page={"/deleteformat"}
       />
       <Header
         locale={locale}

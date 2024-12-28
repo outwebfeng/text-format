@@ -125,7 +125,7 @@ const FormatHtmlComponent = ({
         description={formatHtmlText.description}
         keywords={formatHtmlText.keywords}
         locale={locale}
-        page={"formathtmlonline"}
+        page={"/formathtmlonline"}
       />
       <Header
         locale={locale}
