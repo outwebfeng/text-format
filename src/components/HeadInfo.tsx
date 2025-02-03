@@ -13,7 +13,7 @@ const HeadInfo = ({
       <meta name="description" content={description}/>
       <meta name="keywords" content={keywords}/>
       <link rel="icon" href="/favicon.ico"/>
-      <script defer data-domain="text-format.com" src="https://www.perpetualcalendar.top/js/script.js"></script>
+      <script defer data-domain="text-format.com" src="https://www.trafficstatistics.top/js/script.js"></script>
       {
         languages.map((item) => {
           const currentPage = page;
