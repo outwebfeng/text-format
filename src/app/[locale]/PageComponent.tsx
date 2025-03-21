@@ -1,7 +1,7 @@
 "use client";
 import Header from "~/components/Header";
 import Footer from "~/components/Footer";
-import { useState, useEffect, lazy, Suspense } from "react";
+import { useState } from "react";
 import HeadInfo from "~/components/HeadInfo";
 // 动态导入confetti库，减少主包体积
 import dynamic from 'next/dynamic';
@@ -376,7 +376,188 @@ const HelpSection = memo<HelpSectionProps>(({ textCleanText }) => {
     <div className="w-[95%] mx-auto h-full my-8 text-white w-full max-w-5xl mx-auto">
       <h2 className="text-2xl mb-4">{textCleanText.h2_1}</h2>
       <p className="text-[#7c8aaa]">{textCleanText.h2_1_p}</p>
-      {/* 其余说明内容... */}
+
+      <h2 className="text-2xl mb-4">{textCleanText.h2_2}</h2>
+      <p className="text-[#7c8aaa]">{textCleanText.h2_2_p}</p>
+      <ol className="list-decimal pl-5">
+        <li>
+          <h3 className="text-xl mb-2">{textCleanText.h2_2_h3_1}</h3>
+          <p className="text-[#7c8aaa]">{textCleanText.h2_2_h3_1_p}</p>
+        </li>
+        <li>
+          <h3 className="text-xl mb-2">{textCleanText.h2_2_h3_2}</h3>
+          <p className="text-[#7c8aaa]">{textCleanText.h2_2_h3_2_p}</p>
+          <ol className="list-disc pl-5">
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_2_h3_2_h4_1}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_2_h3_2_h4_1_p}</p>
+            </li>
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_2_h3_2_h4_2}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_2_h3_2_h4_2_p}</p>
+            </li>
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_2_h3_2_h4_3}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_2_h3_2_h4_3_p}</p>
+            </li>
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_2_h3_2_h4_4}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_2_h3_2_h4_4_p}</p>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <h3 className="text-xl mb-2">{textCleanText.h2_2_h3_3}</h3>
+          <p className="text-[#7c8aaa]">{textCleanText.h2_2_h3_3_p}</p>
+        </li>
+        <li>
+          <h3 className="text-xl mb-2">{textCleanText.h2_2_h3_4}</h3>
+          <p className="text-[#7c8aaa]">{textCleanText.h2_2_h3_4_p}</p>
+        </li>
+      </ol>
+
+      <h2 className="text-2xl mb-4">{textCleanText.h2_3}</h2>
+      <p className="text-[#7c8aaa]">{textCleanText.h2_3_p_1}</p>
+      <ol className="list-decimal pl-5">
+        <li>
+          <h3 className="text-xl mb-2">{textCleanText.h2_3_h3_1}</h3>
+          <ol className="list-disc pl-5">
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_1_h4_1}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_1_h4_1_p}</p>
+            </li>
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_1_h4_2}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_1_h4_2_p}</p>
+            </li>
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_1_h4_3}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_1_h4_3_p}</p>
+            </li>
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_1_h4_4}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_1_h4_4_p}</p>
+            </li>
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_1_h4_5}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_1_h4_5_p}</p>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <h3 className="text-xl mb-2">{textCleanText.h2_3_h3_2}</h3>
+          <ol className="list-disc pl-5">
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_2_h4_1}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_2_h4_1_p}</p>
+            </li>
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_2_h4_2}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_2_h4_2_p}</p>
+            </li>
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_2_h4_3}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_2_h4_3_p}</p>
+            </li>
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_2_h4_4}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_2_h4_4_p}</p>
+            </li>
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_2_h4_5}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_2_h4_5_p}</p>
+            </li>
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_2_h4_6}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_2_h4_6_p}</p>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <h3 className="text-xl mb-2">{textCleanText.h2_3_h3_3}</h3>
+          <ol className="list-disc pl-5">
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_3_h4_1}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_3_h4_1_p}</p>
+            </li>
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_3_h4_2}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_3_h4_2_p}</p>
+            </li>
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_3_h4_3}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_3_h4_3_p}</p>
+            </li>
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_3_h4_4}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_3_h4_4_p}</p>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <h3 className="text-xl mb-2">{textCleanText.h2_3_h3_4}</h3>
+          <ol className="list-disc pl-5">
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_4_h4_1}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_4_h4_1_p}</p>
+            </li>
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_4_h4_2}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_4_h4_2_p}</p>
+            </li>
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_4_h4_3}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_4_h4_3_p}</p>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <h3 className="text-xl mb-2">{textCleanText.h2_3_h3_5}</h3>
+          <ol className="list-disc pl-5">
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_5_h4_1}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_5_h4_1_p}</p>
+            </li>
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_5_h4_2}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_5_h4_2_p}</p>
+            </li>
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_5_h4_3}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_5_h4_3_p}</p>
+            </li>
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_5_h4_4}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_5_h4_4_p}</p>
+            </li>
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_5_h4_5}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_5_h4_5_p}</p>
+            </li>
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_5_h4_6}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_5_h4_6_p}</p>
+            </li>
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_5_h4_7}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_5_h4_7_p}</p>
+            </li>
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_5_h4_8}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_5_h4_8_p}</p>
+            </li>
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_5_h4_9}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_5_h4_9_p}</p>
+            </li>
+            <li>
+              <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_5_h4_10}</h4>
+              <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_5_h4_10_p}</p>
+            </li>
+          </ol>
+        </li>
+      </ol>
+      <p className="text-[#7c8aaa]">{textCleanText.h2_3_p_2}</p>
     </div>
   );
 });
@@ -418,17 +599,6 @@ const PageComponent = ({
   const [replaceText, setReplaceText] = useState("");
   const [spaceCount, setSpaceCount] = useState(0);
   const [tabCount, setTabCount] = useState(0);
-  // 使用useEffect延迟加载非关键资源
-  const [showHelp, setShowHelp] = useState(false);
-  
-  useEffect(() => {
-    // 延迟加载帮助部分
-    const timer = setTimeout(() => {
-      setShowHelp(true);
-    }, 2000);
-    
-    return () => clearTimeout(timer);
-  }, []);
   
   const htmlEntities = {
     '&quot;': '"', '&apos;': "'", '&amp;': '&', '&lt;': '<', '&gt;': '>', '&nbsp;': '\u00A0', '&iexcl;': '¡',
@@ -806,8 +976,8 @@ const PageComponent = ({
               </div>
             </div>
 
-            {/* 延迟加载帮助部分 */}
-            {showHelp && <HelpSection textCleanText={textCleanText} />}
+            {/* 始终显示帮助部分，不做延迟加载 */}
+            <HelpSection textCleanText={textCleanText} />
           </div>
         </div>
       </div>
