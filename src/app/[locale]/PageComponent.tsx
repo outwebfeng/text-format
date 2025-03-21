@@ -11,9 +11,69 @@ import confettiOriginal from 'canvas-confetti';
 
 // 将非关键内容拆分为小组件，并在组件内部使用memo以避免不必要的重渲染
 import { memo } from 'react';
+import { Dispatch, SetStateAction } from 'react';
+
+// 定义TextFormatControls组件的props接口
+interface TextFormatControlsProps {
+  textCleanText: any;
+  removePunctuation: boolean;
+  setRemovePunctuation: Dispatch<SetStateAction<boolean>>;
+  stripEmojis: boolean;
+  setStripEmojis: Dispatch<SetStateAction<boolean>>;
+  removeNonASCII: boolean;
+  setRemoveNonASCII: Dispatch<SetStateAction<boolean>>;
+  removeNonAlphanumeric: boolean;
+  setRemoveNonAlphanumeric: Dispatch<SetStateAction<boolean>>;
+  removeEmails: boolean;
+  setRemoveEmails: Dispatch<SetStateAction<boolean>>;
+  unexcapeHtml: boolean;
+  setUnexcapeHtml: Dispatch<SetStateAction<boolean>>;
+  removeHtmlTags: boolean;
+  setRemoveHtmlTags: Dispatch<SetStateAction<boolean>>;
+  removeHtmlIds: boolean;
+  setRemoveHtmlIds: Dispatch<SetStateAction<boolean>>;
+  removeHtmlClasses: boolean;
+  setRemoveHtmlClasses: Dispatch<SetStateAction<boolean>>;
+  decodeHtmlEntities: boolean;
+  setDecodeHtmlEntities: Dispatch<SetStateAction<boolean>>;
+  decodeUrlChars: boolean;
+  setDecodeUrlChars: Dispatch<SetStateAction<boolean>>;
+  addLineToLeft: string;
+  setAddLineToLeft: Dispatch<SetStateAction<string>>;
+  addLineToRight: string;
+  setAddLineToRight: Dispatch<SetStateAction<string>>;
+  removeLineFromLeft: number;
+  setRemoveLineFromLeft: Dispatch<SetStateAction<number>>;
+  removeLineFromRight: number;
+  setRemoveLineFromRight: Dispatch<SetStateAction<number>>;
+  findText: string;
+  setFindText: Dispatch<SetStateAction<string>>;
+  replaceText: string;
+  setReplaceText: Dispatch<SetStateAction<string>>;
+  spaceCount: number;
+  setSpaceCount: Dispatch<SetStateAction<number>>;
+  tabCount: number;
+  setTabCount: Dispatch<SetStateAction<number>>;
+  handleInputChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+  selectAll: () => void;
+  selectNone: () => void;
+  applySettings: () => void;
+}
+
+// 定义HelpSection组件的props接口
+interface HelpSectionProps {
+  textCleanText: any;
+}
+
+// 定义PageComponent组件的props接口
+interface PageComponentProps {
+  locale?: string;
+  indexLanguageText: any;
+  textCleanText: any;
+}
 
 // 优化大型表单区域的渲染
-const TextFormatControls = memo(({ 
+const TextFormatControls = memo<TextFormatControlsProps>(({ 
   textCleanText, 
   removePunctuation, setRemovePunctuation,
   stripEmojis, setStripEmojis,
@@ -307,8 +367,11 @@ const TextFormatControls = memo(({
   );
 });
 
+// 添加displayName以解决ESLint错误
+TextFormatControls.displayName = 'TextFormatControls';
+
 // 将说明文档内容延迟加载
-const HelpSection = memo(({ textCleanText }) => {
+const HelpSection = memo<HelpSectionProps>(({ textCleanText }) => {
   return (
     <div className="w-[95%] mx-auto h-full my-8 text-white w-full max-w-5xl mx-auto">
       <h2 className="text-2xl mb-4">{textCleanText.h2_1}</h2>
@@ -318,11 +381,14 @@ const HelpSection = memo(({ textCleanText }) => {
   );
 });
 
+// 添加displayName以解决ESLint错误
+HelpSection.displayName = 'HelpSection';
+
 const PageComponent = ({
   locale = "",
   indexLanguageText,
   textCleanText,
-}) => {
+}: PageComponentProps) => {
   // Character Settings
   const [textStr, setTextStr] = useState("");
 
@@ -387,8 +453,8 @@ const PageComponent = ({
     '&lang;': '〈', '&rang;': '〉', '&loz;': '◊', '&spades;': '♠', '&clubs;': '♣', '&hearts;': '♥', '&diams;': '♦',
   };
 
-  const handleInputChange = (e) => {
-    const { name, value, type, checked } = e.target;
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value, type, checked } = e.target as HTMLInputElement;
     console.log("handleInputChange" + name);
     switch (name) {
       case "find_and_replace_find":
