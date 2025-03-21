@@ -7,7 +7,13 @@ import { locales } from '~/config';
 import { CommonProvider } from '~/context/common-context';
 import Script from 'next/script';
 
-const inter = Inter({ subsets: ['latin'] });
+// 预加载字体以提高性能
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'sans-serif']
+});
 
 type Props = {
   children: ReactNode;
@@ -37,6 +43,21 @@ export default async function LocaleLayout({
   return (
     <html className="h-full" lang={locale}>
       <head>
+        {/* 内联关键CSS以加快渲染速度 */}
+        <style dangerouslySetInnerHTML={{ __html: `
+          body { background-color: #020d24; margin: 0; padding: 0; }
+          header { background-color: #020d24; }
+          .h-8 { height: 2rem; }
+          .w-auto { width: auto; }
+        `}} />
+        
+        {/* 添加预连接以加快资源加载 */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* 预加载关键静态资源 */}
+        <link rel="preload" href="/webui.svg" as="image" />
+
         {googleAnalyticsId && (
           <>
             <Script src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`} strategy="afterInteractive" />
@@ -51,11 +72,12 @@ export default async function LocaleLayout({
           </>
         )}
         {googleAdsenseClientId && (
-          <script
+          <Script
             async
             src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${googleAdsenseClientId}`}
+            strategy="lazyOnload"
             crossOrigin="anonymous"
-          ></script>
+          />
         )}
         {googleAdsenseClientId && (<meta name="google-adsense-account" content={googleAdsenseClientId}></meta>)}
       </head>

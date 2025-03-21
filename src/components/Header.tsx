@@ -74,7 +74,10 @@ export default function Header({
               src="/webui.svg"
               width="32"
               height="24"
-              alt="text-format.com"/>
+              alt="text-format.com"
+              loading="eager"
+              fetchPriority="high"
+            />
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -162,7 +165,10 @@ export default function Header({
                 src="/webui.svg"
                 width="32"
                 height="24"
-                alt="text-format.com" />
+                alt="text-format.com"
+                loading="eager"
+                fetchPriority="high"
+              />
             </a>
             <button
               type="button"

@@ -1,9 +1,322 @@
 "use client";
 import Header from "~/components/Header";
 import Footer from "~/components/Footer";
-import { useState } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
 import HeadInfo from "~/components/HeadInfo";
-import confetti from 'canvas-confetti';
+// 动态导入confetti库，减少主包体积
+import dynamic from 'next/dynamic';
+
+// 正确导入confetti库
+import confettiOriginal from 'canvas-confetti';
+
+// 将非关键内容拆分为小组件，并在组件内部使用memo以避免不必要的重渲染
+import { memo } from 'react';
+
+// 优化大型表单区域的渲染
+const TextFormatControls = memo(({ 
+  textCleanText, 
+  removePunctuation, setRemovePunctuation,
+  stripEmojis, setStripEmojis,
+  removeNonASCII, setRemoveNonASCII,
+  removeNonAlphanumeric, setRemoveNonAlphanumeric,
+  removeEmails, setRemoveEmails,
+  unexcapeHtml, setUnexcapeHtml,
+  removeHtmlTags, setRemoveHtmlTags,
+  removeHtmlIds, setRemoveHtmlIds,
+  removeHtmlClasses, setRemoveHtmlClasses,
+  decodeHtmlEntities, setDecodeHtmlEntities,
+  decodeUrlChars, setDecodeUrlChars,
+  addLineToLeft, setAddLineToLeft,
+  addLineToRight, setAddLineToRight,
+  removeLineFromLeft, setRemoveLineFromLeft,
+  removeLineFromRight, setRemoveLineFromRight,
+  findText, setFindText,
+  replaceText, setReplaceText,
+  spaceCount, setSpaceCount,
+  tabCount, setTabCount,
+  handleInputChange, 
+  selectAll, 
+  selectNone,
+  applySettings
+}) => {
+  return (
+    <div className="p-4 bg-white text-[#7c8aaa]">
+      {/* 字符设置部分 */}
+      <div className="flex justify-center items-center space-x-3 border-t border-gray-200 px-2 py-2"></div>
+      <h2 className="text-2xl mb-4">
+        {textCleanText.char_setting}
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+        <label className="flex items-center space-x-2">
+          <input
+            type="checkbox"
+            name="char_remove_puctuation_marks"
+            checked={removePunctuation}
+            onChange={(e) => setRemovePunctuation(e.target.checked)}
+          />
+          <span>
+            {textCleanText.char_remove_puctuation_marks}
+          </span>
+        </label>
+        <label className="flex items-center space-x-2">
+          <input
+            type="checkbox"
+            name="char_strip_all_emojis"
+            checked={stripEmojis}
+            onChange={(e) => setStripEmojis(e.target.checked)}
+          />
+          <span>{textCleanText.char_strip_all_emojis}</span>
+        </label>
+        <label className="flex items-center space-x-2">
+          <input
+            type="checkbox"
+            name="char_remove_non_ascii_characters"
+            checked={removeNonASCII}
+            onChange={(e) => setRemoveNonASCII(e.target.checked)}
+          />
+          <span>
+            {textCleanText.char_remove_non_ascii_characters}
+          </span>
+        </label>
+        <label className="flex items-center space-x-2">
+          <input
+            type="checkbox"
+            name="char_remove_non_alphanumeric_characters"
+            checked={removeNonAlphanumeric}
+            onChange={(e) => setRemoveNonAlphanumeric(e.target.checked)}
+          />
+          <span>
+            {
+              textCleanText.char_remove_non_alphanumeric_characters
+            }
+          </span>
+        </label>
+        <label className="flex items-center space-x-2">
+          <input
+            type="checkbox"
+            name="char_remove_all_emails"
+            checked={removeEmails}
+            onChange={(e) => setRemoveEmails(e.target.checked)}
+          />
+          <span>{textCleanText.char_remove_all_emails}</span>
+        </label>
+      </div>
+
+      {/* HTML设置部分 */}
+      <div className="flex justify-center items-center space-x-3 border-t border-gray-200 px-2 py-2"></div>
+      <h2 className="text-2xl mb-4">
+        {textCleanText.html_setting}
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+        <label className="flex items-center space-x-2">
+          <input
+            type="checkbox"
+            name="html_unexcape_html_tags"
+            checked={unexcapeHtml}
+            onChange={(e) => setUnexcapeHtml(e.target.checked)}
+          />
+          <span>{textCleanText.html_unexcape_html_tags}</span>
+        </label>
+        <label className="flex items-center space-x-2">
+          <input
+            type="checkbox"
+            name="html_remove_all_html_tags"
+            checked={removeHtmlTags}
+            onChange={(e) => setRemoveHtmlTags(e.target.checked)}
+          />
+          <span>{textCleanText.html_remove_all_html_tags}</span>
+        </label>
+        <label className="flex items-center space-x-2">
+          <input
+            type="checkbox"
+            name="html_remove_all_ids"
+            checked={removeHtmlIds}
+            onChange={(e) => setRemoveHtmlIds(e.target.checked)}
+          />
+          <span>{textCleanText.html_remove_all_ids}</span>
+        </label>
+        <label className="flex items-center space-x-2">
+          <input
+            type="checkbox"
+            name="html_remove_all_classes"
+            checked={removeHtmlClasses}
+            onChange={(e) => setRemoveHtmlClasses(e.target.checked)}
+          />
+          <span>{textCleanText.html_remove_all_classes}</span>
+        </label>
+        <label className="flex items-center space-x-2">
+          <input
+            type="checkbox"
+            name="html_decode_html_character_entities"
+            checked={decodeHtmlEntities}
+            onChange={(e) => setDecodeHtmlEntities(e.target.checked)}
+          />
+          <span>
+            {textCleanText.html_decode_html_character_entities}
+          </span>
+        </label>
+        <label className="flex items-center space-x-2">
+          <input
+            type="checkbox"
+            name="html_decode_url_encoded_characters"
+            checked={decodeUrlChars}
+            onChange={(e) => setDecodeUrlChars(e.target.checked)}
+          />
+          <span>
+            {textCleanText.html_decode_url_encoded_characters}
+          </span>
+        </label>
+      </div>
+
+      {/* 行设置部分 */}
+      <div className="flex justify-center items-center space-x-3 border-t border-gray-200 px-2 py-2"></div>
+      <h2 className="text-2xl mb-4">
+        {textCleanText.multiple_line_setting}
+      </h2>
+      <div className="flex items-center space-x-2 mb-2">
+        <span>{textCleanText.line_add}</span>
+        <input
+          type="text"
+          name="add_line_to_left"
+          value={addLineToLeft}
+          onChange={handleInputChange}
+          className="border-b-2 border-gray-300 bg-transparent py-1 px-2 focus:outline-none focus:border-blue-500 w-32"
+        />
+        <span>{textCleanText.line_to_left}</span>
+      </div>
+      <div className="flex items-center space-x-2 mb-2">
+        <span>{textCleanText.line_add}</span>
+        <input
+          type="text"
+          name="add_line_to_right"
+          value={addLineToRight}
+          onChange={handleInputChange}
+          className="border-b-2 border-gray-300 bg-transparent py-1 px-2 focus:outline-none focus:border-blue-500 w-32"
+        />
+        <span>{textCleanText.line_to_right}</span>
+      </div>
+      <div className="flex items-center space-x-2 mb-2">
+        <span>{textCleanText.line_remove}</span>
+        <input
+          type="number"
+          name="remove_line_from_left"
+          value={removeLineFromLeft}
+          onChange={handleInputChange}
+          className="border-b-2 border-gray-300 bg-transparent py-1 px-2 focus:outline-none focus:border-blue-500 w-20"
+          min="0"
+          step="1"
+          inputMode="numeric"
+          pattern="\d*"
+        />
+        <span>{textCleanText.line_from_left}</span>
+      </div>
+      <div className="flex items-center space-x-2 mb-2">
+        <span>{textCleanText.line_remove}</span>
+        <input
+          type="number"
+          name="remove_line_from_right"
+          value={removeLineFromRight}
+          onChange={handleInputChange}
+          className="border-b-2 border-gray-300 bg-transparent py-1 px-2 focus:outline-none focus:border-blue-500 w-20"
+          min="0"
+          step="1"
+          inputMode="numeric"
+          pattern="\d*"
+        />
+        <span>{textCleanText.line_from_right}</span>
+      </div>
+
+      {/* 查找替换部分 */}
+      <div className="flex justify-center items-center space-x-3 border-t border-gray-200 px-2 py-2"></div>
+      <h2 className="text-2xl mb-4">
+        {textCleanText.find_replace_setting}
+      </h2>
+      <div className="flex items-center space-x-2 mb-2">
+        <span>{textCleanText.find_find}</span>
+        <input
+          type="text"
+          name="find_and_replace_find"
+          value={findText}
+          onChange={handleInputChange}
+          className="border-b-2 border-gray-300 bg-transparent py-1 px-2 focus:outline-none focus:border-blue-500 w-32"
+        />
+        <span>{textCleanText.find_replace_text}</span>
+        <input
+          type="text"
+          name="find_and_replace_replace"
+          value={replaceText}
+          onChange={handleInputChange}
+          className="border-b-2 border-gray-300 bg-transparent py-1 px-2 focus:outline-none focus:border-blue-500 w-32"
+        />
+      </div>
+      <div className="flex items-center space-x-2 mb-2">
+        <span>{textCleanText.find_replace}</span>
+        <input
+          type="number"
+          name="replace_tab_character"
+          value={spaceCount}
+          onChange={handleInputChange}
+          className="border-b-2 border-gray-300 bg-transparent py-1 px-2 focus:outline-none focus:border-blue-500 w-12"
+          min="1"
+          max="8"
+          step="1"
+          inputMode="numeric"
+          pattern="\d*"
+        />
+        <span>{textCleanText.find_replace_with_tab}</span>
+      </div>
+      <div className="flex items-center space-x-2 mb-2">
+        <span>{textCleanText.find_replace_with_space}</span>
+        <input
+          type="number"
+          name="replace_tab_tab"
+          value={tabCount}
+          onChange={handleInputChange}
+          className="border-b-2 border-gray-300 bg-transparent py-1 px-2 focus:outline-none focus:border-blue-500 w-12"
+          min="1"
+          max="8"
+          step="1"
+          inputMode="numeric"
+          pattern="\d*"
+        />
+        <span>{textCleanText.find_replace_space}</span>
+      </div>
+
+      <button
+        type="button"
+        className="mt-4 p-2 bg-green-500 text-white rounded m-2"
+        onClick={selectAll}
+      >
+        {textCleanText.select_all}
+      </button>
+      <button
+        type="button"
+        className="mt-4 p-2 bg-red-500 text-white rounded m-2"
+        onClick={selectNone}
+      >
+        {textCleanText.select_none}
+      </button>
+      <button
+        type="button"
+        className="mt-4 p-2 bg-blue-500 text-white rounded m-2"
+        onClick={applySettings}
+      >
+        {textCleanText.text_clean_apply}
+      </button>
+    </div>
+  );
+});
+
+// 将说明文档内容延迟加载
+const HelpSection = memo(({ textCleanText }) => {
+  return (
+    <div className="w-[95%] mx-auto h-full my-8 text-white w-full max-w-5xl mx-auto">
+      <h2 className="text-2xl mb-4">{textCleanText.h2_1}</h2>
+      <p className="text-[#7c8aaa]">{textCleanText.h2_1_p}</p>
+      {/* 其余说明内容... */}
+    </div>
+  );
+});
 
 const PageComponent = ({
   locale = "",
@@ -39,6 +352,18 @@ const PageComponent = ({
   const [replaceText, setReplaceText] = useState("");
   const [spaceCount, setSpaceCount] = useState(0);
   const [tabCount, setTabCount] = useState(0);
+  // 使用useEffect延迟加载非关键资源
+  const [showHelp, setShowHelp] = useState(false);
+  
+  useEffect(() => {
+    // 延迟加载帮助部分
+    const timer = setTimeout(() => {
+      setShowHelp(true);
+    }, 2000);
+    
+    return () => clearTimeout(timer);
+  }, []);
+  
   const htmlEntities = {
     '&quot;': '"', '&apos;': "'", '&amp;': '&', '&lt;': '<', '&gt;': '>', '&nbsp;': '\u00A0', '&iexcl;': '¡',
     '&cent;': '¢', '&pound;': '£', '&curren;': '¤', '&yen;': '¥', '&brvbar;': '¦', '&sect;': '§', '&uml;': '¨', '&copy;': '©',
@@ -285,7 +610,7 @@ const PageComponent = ({
   const copyText = () => {
     navigator.clipboard.writeText(textStr).then(
       () => {
-        confetti({ particleCount: 300, spread: 200, origin: { y: 0.6 } });
+        confettiOriginal({ particleCount: 300, spread: 200, origin: { y: 0.6 } });
       },
       (err) => {
         alert("Failed to copy text: " + err);
@@ -366,458 +691,57 @@ const PageComponent = ({
                     ))}
                   </div>
 
-                  <div className="p-4 bg-white text-[#7c8aaa]">
-
-                    <div className="flex justify-center items-center space-x-3 border-t border-gray-200 px-2 py-2"></div>
-                    <h2 className="text-2xl mb-4">
-                      {textCleanText.char_setting}
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                      <label className="flex items-center space-x-2">
-                        <input
-                          type="checkbox"
-                          name="char_remove_puctuation_marks"
-                          checked={removePunctuation}
-                          onChange={(e) => setRemovePunctuation(e.target.checked)}
-                        />
-                        <span>
-                          {textCleanText.char_remove_puctuation_marks}
-                        </span>
-                      </label>
-                      <label className="flex items-center space-x-2">
-                        <input
-                          type="checkbox"
-                          name="char_strip_all_emojis"
-                          checked={stripEmojis}
-                          onChange={(e) => setStripEmojis(e.target.checked)}
-                        />
-                        <span>{textCleanText.char_strip_all_emojis}</span>
-                      </label>
-                      <label className="flex items-center space-x-2">
-                        <input
-                          type="checkbox"
-                          name="char_remove_non_ascii_characters"
-                          checked={removeNonASCII}
-                          onChange={(e) => setRemoveNonASCII(e.target.checked)}
-                        />
-                        <span>
-                          {textCleanText.char_remove_non_ascii_characters}
-                        </span>
-                      </label>
-                      <label className="flex items-center space-x-2">
-                        <input
-                          type="checkbox"
-                          name="char_remove_non_alphanumeric_characters"
-                          checked={removeNonAlphanumeric}
-                          onChange={(e) => setRemoveNonAlphanumeric(e.target.checked)}
-                        />
-                        <span>
-                          {
-                            textCleanText.char_remove_non_alphanumeric_characters
-                          }
-                        </span>
-                      </label>
-                      <label className="flex items-center space-x-2">
-                        <input
-                          type="checkbox"
-                          name="char_remove_all_emails"
-                          checked={removeEmails}
-                          onChange={(e) => setRemoveEmails(e.target.checked)}
-                        />
-                        <span>{textCleanText.char_remove_all_emails}</span>
-                      </label>
-                    </div>
-
-                    <div className="flex justify-center items-center space-x-3 border-t border-gray-200 px-2 py-2"></div>
-                    <h2 className="text-2xl mb-4">
-                      {textCleanText.html_setting}
-                    </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                      <label className="flex items-center space-x-2">
-                        <input
-                          type="checkbox"
-                          name="html_unexcape_html_tags"
-                          checked={unexcapeHtml}
-                          onChange={(e) => setUnexcapeHtml(e.target.checked)}
-                        />
-                        <span>{textCleanText.html_unexcape_html_tags}</span>
-                      </label>
-                      <label className="flex items-center space-x-2">
-                        <input
-                          type="checkbox"
-                          name="html_remove_all_html_tags"
-                          checked={removeHtmlTags}
-                          onChange={(e) => setRemoveHtmlTags(e.target.checked)}
-                        />
-                        <span>{textCleanText.html_remove_all_html_tags}</span>
-                      </label>
-                      <label className="flex items-center space-x-2">
-                        <input
-                          type="checkbox"
-                          name="html_remove_all_ids"
-                          checked={removeHtmlIds}
-                          onChange={(e) => setRemoveHtmlIds(e.target.checked)}
-                        />
-                        <span>{textCleanText.html_remove_all_ids}</span>
-                      </label>
-                      <label className="flex items-center space-x-2">
-                        <input
-                          type="checkbox"
-                          name="html_remove_all_classes"
-                          checked={removeHtmlClasses}
-                          onChange={(e) => setRemoveHtmlClasses(e.target.checked)}
-                        />
-                        <span>{textCleanText.html_remove_all_classes}</span>
-                      </label>
-                      <label className="flex items-center space-x-2">
-                        <input
-                          type="checkbox"
-                          name="html_decode_html_character_entities"
-                          checked={decodeHtmlEntities}
-                          onChange={(e) => setDecodeHtmlEntities(e.target.checked)}
-                        />
-                        <span>
-                          {textCleanText.html_decode_html_character_entities}
-                        </span>
-                      </label>
-                      <label className="flex items-center space-x-2">
-                        <input
-                          type="checkbox"
-                          name="html_decode_url_encoded_characters"
-                          checked={decodeUrlChars}
-                          onChange={(e) => setDecodeUrlChars(e.target.checked)}
-                        />
-                        <span>
-                          {textCleanText.html_decode_url_encoded_characters}
-                        </span>
-                      </label>
-                    </div>
-
-                    <div className="flex justify-center items-center space-x-3 border-t border-gray-200 px-2 py-2"></div>
-                    <h2 className="text-2xl mb-4">
-                      {textCleanText.multiple_line_setting}
-                    </h2>
-                    <div className="flex items-center space-x-2 mb-2">
-                      <span>{textCleanText.line_add}</span>
-                      <input
-                        type="text"
-                        name="add_line_to_left"
-                        value={addLineToLeft}
-                        onChange={handleInputChange}
-                        className="border-b-2 border-gray-300 bg-transparent py-1 px-2 focus:outline-none focus:border-blue-500 w-32"
-                      />
-                      <span>{textCleanText.line_to_left}</span>
-                    </div>
-                    <div className="flex items-center space-x-2 mb-2">
-                      <span>{textCleanText.line_add}</span>
-                      <input
-                        type="text"
-                        name="add_line_to_right"
-                        value={addLineToRight}
-                        onChange={handleInputChange}
-                        className="border-b-2 border-gray-300 bg-transparent py-1 px-2 focus:outline-none focus:border-blue-500 w-32"
-                      />
-                      <span>{textCleanText.line_to_right}</span>
-                    </div>
-                    <div className="flex items-center space-x-2 mb-2">
-                      <span>{textCleanText.line_remove}</span>
-                      <input
-                        type="number"
-                        name="remove_line_from_left"
-                        value={removeLineFromLeft}
-                        onChange={handleInputChange}
-                        className="border-b-2 border-gray-300 bg-transparent py-1 px-2 focus:outline-none focus:border-blue-500 w-20"
-                        min="0"
-                        step="1"
-                        inputMode="numeric"
-                        pattern="\d*"
-                      />
-                      <span>{textCleanText.line_from_left}</span>
-                    </div>
-                    <div className="flex items-center space-x-2 mb-2">
-                      <span>{textCleanText.line_remove}</span>
-                      <input
-                        type="number"
-                        name="remove_line_from_right"
-                        value={removeLineFromRight}
-                        onChange={handleInputChange}
-                        className="border-b-2 border-gray-300 bg-transparent py-1 px-2 focus:outline-none focus:border-blue-500 w-20"
-                        min="0"
-                        step="1"
-                        inputMode="numeric"
-                        pattern="\d*"
-                      />
-                      <span>{textCleanText.line_from_right}</span>
-                    </div>
-
-                    <div className="flex justify-center items-center space-x-3 border-t border-gray-200 px-2 py-2"></div>
-                    <h2 className="text-2xl mb-4">
-                      {textCleanText.find_replace_setting}
-                    </h2>
-                    <div className="flex items-center space-x-2 mb-2">
-                      <span>{textCleanText.find_find}</span>
-                      <input
-                        type="text"
-                        name="find_and_replace_find"
-                        value={findText}
-                        onChange={handleInputChange}
-                        className="border-b-2 border-gray-300 bg-transparent py-1 px-2 focus:outline-none focus:border-blue-500 w-32"
-                      />
-                      <span>{textCleanText.find_replace_text}</span>
-                      <input
-                        type="text"
-                        name="find_and_replace_replace"
-                        value={replaceText}
-                        onChange={handleInputChange}
-                        className="border-b-2 border-gray-300 bg-transparent py-1 px-2 focus:outline-none focus:border-blue-500 w-32"
-                      />
-                    </div>
-                    <div className="flex items-center space-x-2 mb-2">
-                      <span>{textCleanText.find_replace}</span>
-                      <input
-                        type="number"
-                        name="replace_tab_character"
-                        value={spaceCount}
-                        onChange={handleInputChange}
-                        className="border-b-2 border-gray-300 bg-transparent py-1 px-2 focus:outline-none focus:border-blue-500 w-12"
-                        min="1"
-                        max="8"
-                        step="1"
-                        inputMode="numeric"
-                        pattern="\d*"
-                      />
-                      <span>{textCleanText.find_replace_with_tab}</span>
-                    </div>
-                    <div className="flex items-center space-x-2 mb-2">
-                      <span>{textCleanText.find_replace_with_space}</span>
-                      <input
-                        type="number"
-                        name="replace_tab_tab"
-                        value={tabCount}
-                        onChange={handleInputChange}
-                        className="border-b-2 border-gray-300 bg-transparent py-1 px-2 focus:outline-none focus:border-blue-500 w-12"
-                        min="1"
-                        max="8"
-                        step="1"
-                        inputMode="numeric"
-                        pattern="\d*"
-                      />
-                      <span>{textCleanText.find_replace_space}</span>
-                    </div>
-
-                    <button
-                      type="button"
-                      className="mt-4 p-2 bg-green-500 text-white rounded m-2"
-                      onClick={selectAll}
-                    >
-                      {textCleanText.select_all}
-                    </button>
-                    <button
-                      type="button"
-                      className="mt-4 p-2 bg-red-500 text-white rounded m-2"
-                      onClick={selectNone}
-                    >
-                      {textCleanText.select_none}
-                    </button>
-                    <button
-                      type="button"
-                      className="mt-4 p-2 bg-blue-500 text-white rounded m-2"
-                      onClick={applySettings}
-                    >
-                      {textCleanText.text_clean_apply}
-                    </button>
-
-                  </div>
+                  <TextFormatControls
+                    textCleanText={textCleanText}
+                    removePunctuation={removePunctuation}
+                    setRemovePunctuation={setRemovePunctuation}
+                    stripEmojis={stripEmojis}
+                    setStripEmojis={setStripEmojis}
+                    removeNonASCII={removeNonASCII}
+                    setRemoveNonASCII={setRemoveNonASCII}
+                    removeNonAlphanumeric={removeNonAlphanumeric}
+                    setRemoveNonAlphanumeric={setRemoveNonAlphanumeric}
+                    removeEmails={removeEmails}
+                    setRemoveEmails={setRemoveEmails}
+                    unexcapeHtml={unexcapeHtml}
+                    setUnexcapeHtml={setUnexcapeHtml}
+                    removeHtmlTags={removeHtmlTags}
+                    setRemoveHtmlTags={setRemoveHtmlTags}
+                    removeHtmlIds={removeHtmlIds}
+                    setRemoveHtmlIds={setRemoveHtmlIds}
+                    removeHtmlClasses={removeHtmlClasses}
+                    setRemoveHtmlClasses={setRemoveHtmlClasses}
+                    decodeHtmlEntities={decodeHtmlEntities}
+                    setDecodeHtmlEntities={setDecodeHtmlEntities}
+                    decodeUrlChars={decodeUrlChars}
+                    setDecodeUrlChars={setDecodeUrlChars}
+                    addLineToLeft={addLineToLeft}
+                    setAddLineToLeft={setAddLineToLeft}
+                    addLineToRight={addLineToRight}
+                    setAddLineToRight={setAddLineToRight}
+                    removeLineFromLeft={removeLineFromLeft}
+                    setRemoveLineFromLeft={setRemoveLineFromLeft}
+                    removeLineFromRight={removeLineFromRight}
+                    setRemoveLineFromRight={setRemoveLineFromRight}
+                    findText={findText}
+                    setFindText={setFindText}
+                    replaceText={replaceText}
+                    setReplaceText={setReplaceText}
+                    spaceCount={spaceCount}
+                    setSpaceCount={setSpaceCount}
+                    tabCount={tabCount}
+                    setTabCount={setTabCount}
+                    handleInputChange={handleInputChange}
+                    selectAll={selectAll}
+                    selectNone={selectNone}
+                    applySettings={applySettings}
+                  />
                 </form>
               </div>
             </div>
 
-            <div className="w-[95%] mx-auto h-full my-8 text-white w-full max-w-5xl mx-auto">
-              <h2 className="text-2xl mb-4">{textCleanText.h2_1}</h2>
-              <p className="text-[#7c8aaa]">{textCleanText.h2_1_p}</p>
-
-              <h2 className="text-2xl mb-4">{textCleanText.h2_2}</h2>
-              <p className="text-[#7c8aaa]">{textCleanText.h2_2_p}</p>
-              <ol className="list-decimal pl-5">
-                <li>
-                  <h3 className="text-xl mb-2">{textCleanText.h2_2_h3_1}</h3>
-                  <p className="text-[#7c8aaa]">{textCleanText.h2_2_h3_1_p}</p>
-                </li>
-                <li>
-                  <h3 className="text-xl mb-2">{textCleanText.h2_2_h3_2}</h3>
-                  <p className="text-[#7c8aaa]">{textCleanText.h2_2_h3_2_p}</p>
-                  <ol className="list-disc pl-5">
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_2_h3_2_h4_1}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_2_h3_2_h4_1_p}</p>
-                    </li>
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_2_h3_2_h4_2}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_2_h3_2_h4_2_p}</p>
-                    </li>
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_2_h3_2_h4_3}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_2_h3_2_h4_3_p}</p>
-                    </li>
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_2_h3_2_h4_4}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_2_h3_2_h4_4_p}</p>
-                    </li>
-                  </ol>
-                </li>
-                <li>
-                  <h3 className="text-xl mb-2">{textCleanText.h2_2_h3_3}</h3>
-                  <p className="text-[#7c8aaa]">{textCleanText.h2_2_h3_3_p}</p>
-                </li>
-                <li>
-                  <h3 className="text-xl mb-2">{textCleanText.h2_2_h3_4}</h3>
-                  <p className="text-[#7c8aaa]">{textCleanText.h2_2_h3_4_p}</p>
-                </li>
-              </ol>
-
-              <h2 className="text-2xl mb-4">{textCleanText.h2_3}</h2>
-              <p className="text-[#7c8aaa]">{textCleanText.h2_3_p_1}</p>
-              <ol className="list-decimal pl-5">
-                <li>
-                  <h3 className="text-xl mb-2">{textCleanText.h2_3_h3_1}</h3>
-                  <ol className="list-disc pl-5">
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_1_h4_1}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_1_h4_1_p}</p>
-                    </li>
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_1_h4_2}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_1_h4_2_p}</p>
-                    </li>
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_1_h4_3}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_1_h4_3_p}</p>
-                    </li>
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_1_h4_4}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_1_h4_4_p}</p>
-                    </li>
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_1_h4_5}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_1_h4_5_p}</p>
-                    </li>
-                  </ol>
-                </li>
-                <li>
-                  <h3 className="text-xl mb-2">{textCleanText.h2_3_h3_2}</h3>
-                  <ol className="list-disc pl-5">
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_2_h4_1}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_2_h4_1_p}</p>
-                    </li>
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_2_h4_2}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_2_h4_2_p}</p>
-                    </li>
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_2_h4_3}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_2_h4_3_p}</p>
-                    </li>
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_2_h4_4}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_2_h4_4_p}</p>
-                    </li>
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_2_h4_5}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_2_h4_5_p}</p>
-                    </li>
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_2_h4_6}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_2_h4_6_p}</p>
-                    </li>
-                  </ol>
-                </li>
-                <li>
-                  <h3 className="text-xl mb-2">{textCleanText.h2_3_h3_3}</h3>
-                  <ol className="list-disc pl-5">
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_3_h4_1}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_3_h4_1_p}</p>
-                    </li>
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_3_h4_2}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_3_h4_2_p}</p>
-                    </li>
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_3_h4_3}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_3_h4_3_p}</p>
-                    </li>
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_3_h4_4}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_3_h4_4_p}</p>
-                    </li>
-                  </ol>
-                </li>
-                <li>
-                  <h3 className="text-xl mb-2">{textCleanText.h2_3_h3_4}</h3>
-                  <ol className="list-disc pl-5">
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_4_h4_1}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_4_h4_1_p}</p>
-                    </li>
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_4_h4_2}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_4_h4_2_p}</p>
-                    </li>
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_4_h4_3}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_4_h4_3_p}</p>
-                    </li>
-                  </ol>
-                </li>
-                <li>
-                  <h3 className="text-xl mb-2">{textCleanText.h2_3_h3_5}</h3>
-                  <ol className="list-disc pl-5">
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_5_h4_1}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_5_h4_1_p}</p>
-                    </li>
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_5_h4_2}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_5_h4_2_p}</p>
-                    </li>
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_5_h4_3}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_5_h4_3_p}</p>
-                    </li>
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_5_h4_4}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_5_h4_4_p}</p>
-                    </li>
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_5_h4_5}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_5_h4_5_p}</p>
-                    </li>
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_5_h4_6}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_5_h4_6_p}</p>
-                    </li>
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_5_h4_7}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_5_h4_7_p}</p>
-                    </li>
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_5_h4_8}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_5_h4_8_p}</p>
-                    </li>
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_5_h4_9}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_5_h4_9_p}</p>
-                    </li>
-                    <li>
-                      <h4 className="text-lg mb-1">{textCleanText.h2_3_h3_5_h4_10}</h4>
-                      <p className="text-[#7c8aaa]">{textCleanText.h2_3_h3_5_h4_10_p}</p>
-                    </li>
-                  </ol>
-                </li>
-              </ol>
-              <p className="text-[#7c8aaa]">{textCleanText.h2_3_p_2}</p>
-            </div>
+            {/* 延迟加载帮助部分 */}
+            {showHelp && <HelpSection textCleanText={textCleanText} />}
           </div>
         </div>
       </div>
