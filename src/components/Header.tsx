@@ -71,7 +71,7 @@ export default function Header({
           <a href={`/${locale}`} className="-m-1.5 ml-0.5 p-1.5" onClick={() => setShowLoadingModal(true)}>
             <img
               className="h-8 w-auto"
-              src="/webui.svg"
+              src="https://images.text-format.com/webui.svg"
               width="32"
               height="24"
               alt="text-format.com"
@@ -162,7 +162,7 @@ export default function Header({
             <a href={`/${locale}`} className="-m-1.5 ml-0.5 p-1.5" onClick={() => setShowLoadingModal(true)}>
               <img
                 className="h-8 w-auto"
-                src="/webui.svg"
+                src="https://images.text-format.com/webui.svg"
                 width="32"
                 height="24"
                 alt="text-format.com"

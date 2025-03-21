@@ -56,7 +56,7 @@ export default async function LocaleLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
         {/* 预加载关键静态资源 */}
-        <link rel="preload" href="/webui.svg" as="image" />
+        <link rel="preload" href="https://images.text-format.com/webui.svg" as="image" />
 
         {googleAnalyticsId && (
           <>

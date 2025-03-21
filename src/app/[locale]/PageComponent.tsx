@@ -3,8 +3,6 @@ import Header from "~/components/Header";
 import Footer from "~/components/Footer";
 import { useState } from "react";
 import HeadInfo from "~/components/HeadInfo";
-// 动态导入confetti库，减少主包体积
-import dynamic from 'next/dynamic';
 
 // 正确导入confetti库
 import confettiOriginal from 'canvas-confetti';
