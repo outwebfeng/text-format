@@ -8,9 +8,7 @@ export const metadata: Metadata = {
   robots: {
     index: false,
     follow: false
-  },
-  title: 'Terms of Service - Text Format',
-  description: 'Terms of Service for Text Format'
+  }
 };
 
 export default async function PageContent({params: {locale = ''}}) {

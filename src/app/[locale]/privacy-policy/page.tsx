@@ -8,9 +8,7 @@ export const metadata: Metadata = {
   robots: {
     index: false,
     follow: false
-  },
-  title: 'Privacy Policy - Text Format',
-  description: 'Privacy Policy for Text Format'
+  }
 };
 
 export default async function PageContent({params: {locale = ''}}) {
