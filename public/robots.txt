@@ -10,3 +10,12 @@ Disallow: /undefined/
 
 Disallow: /*/privacy-policycanonical/
 Disallow: /privacy-policycanonical/
+
+
+Disallow: /*/privacy-policy/
+Disallow: /privacy-policy/
+
+Disallow: /*/terms-of-service/
+Disallow: /terms-of-service/
+
+Disallow: /_next/

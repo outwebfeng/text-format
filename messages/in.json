@@ -108,7 +108,7 @@
     "h2_3_h3_3": "मल्टीपल लाइन सेटिंग",
     "h2_3_h3_3_h4_1": "प्रत्येक लाइन के बाईं ओर टेक्स्ट जोड़ें",
     "h2_3_h3_3_h4_1_p": "प्रत्येक लाइन की शुरुआत में विशिष्ट टेक्स्ट जोड़ें, जो सूचियों या कोड को फॉर्मेट करने के लिए उपयोगी है।",
-    "h2_3_h3_3_h4_2": "प्रत्���ेक लाइन के दाईं ओर टेक्स्ट जोड़ें",
+    "h2_3_h3_3_h4_2": "प्रत्येक लाइन के दाईं ओर टेक्स्ट जोड़ें",
     "h2_3_h3_3_h4_2_p": "प्रत्येक लाइन के अंत में टेक्स्ट जोड़ें, जो एनोटेशन्स या टिप्पणियों के लिए उपयोगी है।",
     "h2_3_h3_3_h4_3": "प्रत्येक लाइन से बाईं ओर के कैरेक्टर हटाएं",
     "h2_3_h3_3_h4_3_p": "प्रत्येक लाइन की शुरुआत से एक निर्दिष्ट संख्या में कैरेक्टर हटाएं।",
@@ -244,5 +244,24 @@
     "faq_5_desc": "हां, हमारा ऑनलाइन HTML फॉर्मैटर बड़े HTML फाइलों को भी हैंडल कर सकता है; हालांकि, फाइल के आकार और जटिलता के आधार पर प्रदर्शन में भिन्नता हो सकती है। सर्वोत्तम परिणामों के लिए, अत्यधिक बड़ी फाइलों को छोटे हिस्सों में विभाजित करना या कोड के भागों के लिए टूल का उपयोग करना सलाह दी जाती है।",
     "faq_6_title": "क्या मेरे कोड का उपयोग करते समय ऑनलाइन फॉर्मैटर पर मेरी सुरक्षा सुनिश्चित है?",
     "faq_6_desc": "हां, आपके कोड का उपयोग करते समय यह पूरी तरह से सुरक्षित है। हम आपका कोड फॉर्मेट करने के बाद न तो उसे संग्रहित करते हैं और न ही साझा करते हैं। आपकी गोपनीयता हमारे लिए महत्वपूर्ण है, और हम यह सुनिश्चित करते हैं कि टूल का उपयोग करते समय आपका अनुभव सुरक्षित और निजी हो।"
+  },
+  "termsOfService": {
+    "title": "Ketentuan Layanan ｜ Text-Format",
+    "description": "Ketentuan Layanan ini menjelaskan aturan dan panduan untuk menggunakan Text-Format.",
+    "h1": "Ketentuan Layanan",
+    "date": "Terakhir diperbarui: 20 Mei 2024",
+    "desc": "Selamat datang di Text-Format! Ketentuan Layanan ini berlaku untuk penggunaan situs web kami yang ada di text-format.com.",
+    "h4_1": "1. Penerimaan Ketentuan",
+    "h4_1_p": "Dengan mengakses dan menggunakan Text-Format, Anda menyetujui untuk terikat oleh Ketentuan Layanan ini dan semua hukum dan peraturan yang berlaku.",
+    "h4_2": "2. Lisensi Penggunaan",
+    "h4_2_p": "Text-Format disediakan untuk penggunaan pribadi dan komersial. Anda dapat menggunakan layanan kami untuk tujuan pemformatan dan pembersihan teks.",
+    "h4_3": "3. Tanggung Jawab Pengguna",
+    "h4_3_p": "Anda bertanggung jawab untuk menjaga kerahasiaan informasi Anda dan semua aktivitas yang terjadi selama penggunaan Text-Format.",
+    "h4_4": "4. Modifikasi Layanan",
+    "h4_4_p": "Kami berhak untuk memodifikasi atau menghentikan layanan sementara atau permanen dengan atau tanpa pemberitahuan.",
+    "h4_5": "5. Pembatasan Tanggung Jawab",
+    "h4_5_p": "Text-Format tidak akan bertanggung jawab atas kerugian tidak langsung, insidental, khusus, konsekuensial, atau hukuman yang timbul dari penggunaan layanan.",
+    "h4_6": "6. Informasi Kontak",
+    "h4_6_p": "Jika Anda memiliki pertanyaan tentang Ketentuan Layanan ini, silakan hubungi kami di: "
   }
 }

@@ -61,7 +61,7 @@
     "h2_1": "What is Text-Format & Format Cleaner?",
     "h2_1_p": "Text-Format & Format Cleaner is a powerful web-based tool designed to manipulate and format text according to user preferences. This tool offers a range of functionalities including the removal of punctuation, emojis, non-ASCII characters, and emails, as well as HTML tag manipulation and line-based operations. Whether you need to clean up text for analysis, prepare content for publication, or just enhance readability, Text-Format provides an intuitive interface and a comprehensive set of features to meet your text processing needs.",
     "h2_2": "How to Use Text-Format?",
-    "h2_2_p": "Using Text-Format is straightforward and user-friendly. Here’s a step-by-step guide to help you get started:",
+    "h2_2_p": "Using Text-Format is straightforward and user-friendly. Here's a step-by-step guide to help you get started:",
     "h2_2_h3_1": "Input Your Text",
     "h2_2_h3_1_p": "Begin by pasting or typing your content into the provided textarea on the webpage.",
     "h2_2_h3_2": "Select Desired Operations",
@@ -75,7 +75,7 @@
     "h2_2_h3_2_h4_4": "Find and Replace:",
     "h2_2_h3_2_h4_4_p": "Find specific content and replace it with another, replace spaces with tabs or vice versa.",
     "h2_2_h3_3": "Apply the Settings",
-    "h2_2_h3_3_p": "Once you’ve selected the desired operations, click the 'Clean Text' button to process the text according to your selections.",
+    "h2_2_h3_3_p": "Once you've selected the desired operations, click the 'Clean Text' button to process the text according to your selections.",
     "h2_2_h3_4": "Additional Options",
     "h2_2_h3_4_p": "Use the buttons provided to perform additional actions like removing extra spaces, empty lines, or line breaks, changing case (uppercase, lowercase, capitalize sentences or words), removing duplicate lines, copying text to the clipboard, or clearing the textarea.",
     "h2_3": "Features Offered by Text-Format",
@@ -243,5 +243,24 @@
     "faq_5_desc": "Yes, our online HTML formatter can handle large HTML files; however, performance may vary depending on file size and complexity. For optimal results, it's recommended to break down extremely large files or use the tool for parts of your code.",
     "faq_6_title": "Is my code safe when using the online formatter?",
     "faq_6_desc": "Yes, your code is safe when using our online HTML formatter. We do not store or share your code after formatting. Your privacy is important to us, and we ensure a secure and private experience while using our tool."
+  },
+  "termsOfService": {
+    "title": "Terms of Service ｜ Text-Format",
+    "description": "This Terms of Service outlines the rules and guidelines for using Text-Format.",
+    "h1": "Terms of Service",
+    "date": "Last updated: May 20, 2024",
+    "desc": "Welcome to Text-Format! These Terms of Service govern your use of our website located at text-format.com.",
+    "h4_1": "1. Acceptance of Terms",
+    "h4_1_p": "By accessing and using Text-Format, you agree to be bound by these Terms of Service and all applicable laws and regulations.",
+    "h4_2": "2. Use License",
+    "h4_2_p": "Text-Format is provided for personal and commercial use. You may use our services for text formatting and cleaning purposes.",
+    "h4_3": "3. User Responsibilities",
+    "h4_3_p": "You are responsible for maintaining the confidentiality of your information and for all activities that occur under your usage of Text-Format.",
+    "h4_4": "4. Service Modifications",
+    "h4_4_p": "We reserve the right to modify or discontinue, temporarily or permanently, the service with or without notice.",
+    "h4_5": "5. Limitation of Liability",
+    "h4_5_p": "Text-Format shall not be liable for any indirect, incidental, special, consequential or punitive damages resulting from your use of the service.",
+    "h4_6": "6. Contact Information",
+    "h4_6_p": "If you have any questions about these Terms of Service, please contact us at "
   }
 }

@@ -141,7 +141,7 @@
     "h2_3_h3_5_h4_9_p": "Den formatierten Text einfach in die Zwischenablage kopieren, um ihn in anderen Anwendungen zu verwenden.",
     "h2_3_h3_5_h4_10": "Text löschen",
     "h2_3_h3_5_h4_10_p": "Schnell den gesamten Text aus dem Eingabefeld löschen und es für neue Inhalte vorbereiten.",
-    "h2_3_p_2": "Durch die Kombination dieser leistungsstarken Funktionen ermöglicht Text-Format den Benutzern, Text mühelos zu bereinigen, zu formatieren und zu manipulieren, was es zu einem unverzichtbaren Werkzeug für Schriftsteller, Redakteure, Entwickler, Datenanalysten und mehr macht. Ob Sie Text zur Veröffentlichung, zum Codieren, zur Datenanalyse oder f��r eine andere Anwendung vorbereiten müssen - Text-Format bietet die Werkzeuge, die Sie benötigen, um die Aufgabe effizient zu erledigen."
+    "h2_3_p_2": "Durch die Kombination dieser leistungsstarken Funktionen ermöglicht Text-Format den Benutzern, Text mühelos zu bereinigen, zu formatieren und zu manipulieren, was es zu einem unverzichtbaren Werkzeug für Schriftsteller, Redakteure, Entwickler, Datenanalysten und mehr macht. Ob Sie Text zur Veröffentlichung, zum Codieren, zur Datenanalyse oder für eine andere Anwendung vorbereiten müssen - Text-Format bietet die Werkzeuge, die Sie benötigen, um die Aufgabe effizient zu erledigen."
   },
   "privacyPolicy": {
     "title": "Datenschutzerklärung ｜ Text-Format",
@@ -243,5 +243,24 @@
     "faq_5_desc": "Ja, unser Online-HTML-Formatter kann große HTML-Dateien verarbeiten; jedoch kann die Leistung je nach Dateigröße und Komplexität variieren. Für optimale Ergebnisse wird empfohlen, sehr große Dateien in kleinere Abschnitte zu unterteilen oder das Tool für Teile des Codes zu verwenden.",
     "faq_6_title": "Ist mein Code sicher, wenn ich den Online-Formatter benutze?",
     "faq_6_desc": "Ja, Ihr Code ist sicher, wenn Sie unseren Online-HTML-Formatter verwenden. Wir speichern oder teilen Ihren Code nach der Formatierung nicht. Ihre Privatsphäre ist uns wichtig, und wir sorgen für ein sicheres und privates Erlebnis bei der Nutzung unseres Tools."
+  },
+  "termsOfService": {
+    "title": "Nutzungsbedingungen ｜ Text-Format",
+    "description": "Diese Nutzungsbedingungen beschreiben die Regeln und Richtlinien für die Nutzung von Text-Format.",
+    "h1": "Nutzungsbedingungen",
+    "date": "Zuletzt aktualisiert: 20. Mai 2024",
+    "desc": "Willkommen bei Text-Format! Diese Nutzungsbedingungen gelten für Ihre Nutzung unserer Website unter text-format.com.",
+    "h4_1": "1. Annahme der Bedingungen",
+    "h4_1_p": "Durch den Zugriff auf und die Nutzung von Text-Format erklären Sie sich mit diesen Nutzungsbedingungen und allen geltenden Gesetzen und Vorschriften einverstanden.",
+    "h4_2": "2. Nutzungslizenz",
+    "h4_2_p": "Text-Format wird für den persönlichen und gewerblichen Gebrauch bereitgestellt. Sie können unsere Dienste für Textformatierung und -bereinigung nutzen.",
+    "h4_3": "3. Benutzerverantwortung",
+    "h4_3_p": "Sie sind verantwortlich für die Vertraulichkeit Ihrer Informationen und für alle Aktivitäten, die unter Ihrer Nutzung von Text-Format stattfinden.",
+    "h4_4": "4. Dienständerungen",
+    "h4_4_p": "Wir behalten uns das Recht vor, den Dienst vorübergehend oder dauerhaft mit oder ohne vorherige Ankündigung zu ändern oder einzustellen.",
+    "h4_5": "5. Haftungsbeschränkung",
+    "h4_5_p": "Text-Format haftet nicht für indirekte, zufällige, besondere, Folge- oder Strafschäden, die sich aus Ihrer Nutzung des Dienstes ergeben.",
+    "h4_6": "6. Kontaktinformationen",
+    "h4_6_p": "Wenn Sie Fragen zu diesen Nutzungsbedingungen haben, kontaktieren Sie uns bitte unter: "
   }
 }

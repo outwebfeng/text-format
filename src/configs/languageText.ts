@@ -172,6 +172,29 @@ export const getPrivacyPolicyLanguageText = async () => {
   }
 }
 
+export const getTermsOfServiceLanguageText = async () => {
+  const tTermsOfService = await getTranslations('termsOfService');
+  return {
+    title: tTermsOfService('title'),
+    description: tTermsOfService('description'),
+    h1: tTermsOfService('h1'),
+    date: tTermsOfService('date'),
+    desc: tTermsOfService('desc'),
+    h4_1: tTermsOfService('h4_1'),
+    h4_1_p: tTermsOfService('h4_1_p'),
+    h4_2: tTermsOfService('h4_2'),
+    h4_2_p: tTermsOfService('h4_2_p'),
+    h4_3: tTermsOfService('h4_3'),
+    h4_3_p: tTermsOfService('h4_3_p'),
+    h4_4: tTermsOfService('h4_4'),
+    h4_4_p: tTermsOfService('h4_4_p'),
+    h4_5: tTermsOfService('h4_5'),
+    h4_5_p: tTermsOfService('h4_5_p'),
+    h4_6: tTermsOfService('h4_6'),
+    h4_6_p: tTermsOfService('h4_6_p'),
+  }
+}
+
 export async function getDeleteFormatText() {
   const deleteFormat = await getTranslations('deleteFormat');
   return {
