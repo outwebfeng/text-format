@@ -72,7 +72,7 @@ export default async function LocaleLayout({
         <link rel="preload" href="https://images.text-format.com/webui.svg" as="image" fetchPriority="high" />
         
         {/* 启用浏览器的资源提示功能 */}
-        <meta http-equiv="x-dns-prefetch-control" content="on" />
+        <meta httpEquiv="x-dns-prefetch-control" content="on" />
 
         {googleAnalyticsId && (
           <>
