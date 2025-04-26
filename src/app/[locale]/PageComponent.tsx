@@ -1,8 +1,10 @@
 "use client";
 import Header from "~/components/Header";
 import Footer from "~/components/Footer";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import HeadInfo from "~/components/HeadInfo";
+import dynamic from "next/dynamic";
+const GoogleAd = dynamic(() => import("~/components/GoogleAd"), { ssr: false });
 
 // 正确导入confetti库
 import confettiOriginal from 'canvas-confetti';
@@ -598,6 +600,11 @@ const PageComponent = ({
   const [spaceCount, setSpaceCount] = useState(0);
   const [tabCount, setTabCount] = useState(0);
   
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const htmlEntities = {
     '&quot;': '"', '&apos;': "'", '&amp;': '&', '&lt;': '<', '&gt;': '>', '&nbsp;': '\u00A0', '&iexcl;': '¡',
     '&cent;': '¢', '&pound;': '£', '&curren;': '¤', '&yen;': '¥', '&brvbar;': '¦', '&sect;': '§', '&uml;': '¨', '&copy;': '©',
@@ -889,6 +896,7 @@ const PageComponent = ({
               <h1 className="mb-4 text-4xl font-bold md:text-6xl">
                 {textCleanText.h1}
               </h1>
+              {isClient && <GoogleAd />}
               <p className="text-[#7c8aaa] text-lg text-left">
                 {textCleanText.h1_desc}
               </p>
