@@ -15,7 +15,7 @@ const HeadInfo = ({
       <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
       
       {/* 延迟加载不重要的第三方脚本 */}
-      <script defer data-domain="text-format.com" src="https://www.trafficstatistics.top/js/script.js"></script>
+      <script defer data-domain="text-format.com" src="https://app.pageview.app/js/script.js"></script>
       
       {/* 提供正确的语言替代链接，帮助搜索引擎 */}
       {
