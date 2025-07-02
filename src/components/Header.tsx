@@ -17,6 +17,7 @@ const navigation = {
     {name: 'Delete Format', href: '/deleteformat'},
     {name: 'Format HTML', href: '/formathtmlonline'},
     {name: 'Remove Duplicates', href: '/removeduplicates'},
+    {name: 'Font Remover', href: '/fontremover'},
   ],
   social: [
     {

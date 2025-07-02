@@ -14,11 +14,6 @@ export const languages = [
     language: "简体中文",
   },
   {
-    code: "zh-TW",
-    lang: "zh",
-    language: "繁體中文",
-  },
-  {
     code: "ko-KO",
     lang: "ko",
     language: "한국어",
