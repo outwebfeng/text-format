@@ -16,6 +16,7 @@ const navigation = {
     {name: 'Text Format', href: '/'},
     {name: 'Delete Format', href: '/deleteformat'},
     {name: 'Format HTML', href: '/formathtmlonline'},
+    {name: 'Remove Duplicates', href: '/removeduplicates'},
   ],
   social: [
     {

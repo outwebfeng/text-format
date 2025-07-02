@@ -11,16 +11,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://text-format.com/in</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://text-format.com/pk</loc> 
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://text-format.com/ja</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -47,16 +37,6 @@
   </url>
   <url>
     <loc>https://text-format.com/zh/deleteformat</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://text-format.com/in/deleteformat</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://text-format.com/pk/deleteformat</loc> 
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -91,16 +71,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://text-format.com/in/formathtmlonline</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://text-format.com/pk/formathtmlonline</loc> 
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://text-format.com/ja/formathtmlonline</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -120,5 +90,34 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
+  <url>
+    <loc>https://text-format.com/remove-duplicates</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://text-format.com/zh/remove-duplicates</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://text-format.com/ja/remove-duplicates</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://text-format.com/ko/remove-duplicates</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://text-format.com/ar/remove-duplicates</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://text-format.com/de/remove-duplicates</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

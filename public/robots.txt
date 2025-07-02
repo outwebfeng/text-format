@@ -8,6 +8,9 @@ Disallow: *canonical
 Disallow: /*/undefined/
 Disallow: /undefined/
 
+Disallow: /in/
+Disallow: /pk/
+
 Disallow: /*/privacy-policycanonical/
 Disallow: /privacy-policycanonical/
 
