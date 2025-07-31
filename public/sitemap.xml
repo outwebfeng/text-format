@@ -91,32 +91,32 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://text-format.com/remove-duplicates</loc>
+    <loc>https://text-format.com/removeduplicates</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://text-format.com/zh/remove-duplicates</loc>
+    <loc>https://text-format.com/zh/removeduplicates</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://text-format.com/ja/remove-duplicates</loc>
+    <loc>https://text-format.com/ja/removeduplicates</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://text-format.com/ko/remove-duplicates</loc>
+    <loc>https://text-format.com/ko/removeduplicates</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://text-format.com/ar/remove-duplicates</loc>
+    <loc>https://text-format.com/ar/removeduplicates</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://text-format.com/de/remove-duplicates</loc>
+    <loc>https://text-format.com/de/removeduplicates</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

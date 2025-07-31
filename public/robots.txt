@@ -22,3 +22,6 @@ Disallow: /*/terms-of-service/
 Disallow: /terms-of-service/
 
 Disallow: /_next/
+
+# Sitemap
+Sitemap: https://text-format.com/sitemap.xml
