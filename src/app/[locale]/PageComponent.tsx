@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import HeadInfo from "~/components/HeadInfo";
 import dynamic from "next/dynamic";
 const GoogleAd = dynamic(() => import("~/components/GoogleAd"), { ssr: false });
+import GoogleAdFixed from "~/components/GoogleAdFixed";
 
 // 正确导入confetti库
 import confettiOriginal from 'canvas-confetti';
@@ -901,6 +902,10 @@ const PageComponent = ({
                 {textCleanText.h1_desc}
               </p>
             </div>
+            
+            {/* 固定广告 */}
+            <GoogleAdFixed />
+            
             <div>
               <div
                 className={

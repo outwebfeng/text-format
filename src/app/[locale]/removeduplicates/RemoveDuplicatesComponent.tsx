@@ -4,6 +4,7 @@ import Footer from "~/components/Footer";
 import { useState } from "react";
 import HeadInfo from "~/components/HeadInfo";
 import confetti from 'canvas-confetti';
+import GoogleAdFixed from "~/components/GoogleAdFixed";
 
 const RemoveDuplicatesComponent = ({
   locale = "",
@@ -118,6 +119,9 @@ const RemoveDuplicatesComponent = ({
                 {removeDuplicatesText.h1_desc}
               </p>
             </div>
+
+            {/* 固定广告 */}
+            <GoogleAdFixed />
 
             {/* 主要功能区域 */}
             <div>
