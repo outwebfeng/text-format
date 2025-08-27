@@ -5,11 +5,16 @@
   "scripts": {
     "dev": "next dev --port 80",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "build:workers": "npx opennextjs-cloudflare build",
+    "preview:workers": "npx opennextjs-cloudflare preview",
+    "deploy:workers": "npx wrangler deploy",
+    "tail:workers": "npx wrangler tail"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
     "@heroicons/react": "^2.1.1",
+    "@opennextjs/cloudflare": "^1.6.5",
     "@tailwindcss/typography": "^0.5.10",
     "ahooks": "^3.7.10",
     "bluebird": "^3.7.2",
@@ -17,7 +22,7 @@
     "clsx": "^2.1.0",
     "google-auth-library": "^9.6.3",
     "google-one-tap": "^1.0.6",
-    "next": "14.x.x",
+    "next": "14.2.18",
     "next-auth": "^4.24.6",
     "next-intl": "^3.0.0",
     "pg": "^8.11.5",
@@ -34,11 +39,13 @@
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
     "critters": "^0.0.25",
+    "esbuild": "0.17.19",
     "eslint": "^8",
-    "eslint-config-next": "14.1.0",
+    "eslint-config-next": "14.2.18",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
     "typescript": "^5",
-    "worker-loader": "^3.0.8"
+    "worker-loader": "^3.0.8",
+    "wrangler": "^4.32.0"
   }
 }
