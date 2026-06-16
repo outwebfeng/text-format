@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0",
+  "package_id": "20260616213013_text-format功能迁移",
+  "package_path": "zero-feng/req/20260616213013_text-format功能迁移",
+  "created_at": "2026-06-16T21:30:13+08:00",
+  "readiness": "PIPELINE_READY",
+  "contract_locks": {
+    "business_rules_locked": true,
+    "scope_locked": true,
+    "acceptance_locked": true,
+    "permission_model_locked": true,
+    "external_contracts_locked": true
+  },
+  "unresolved_assumptions_count": 0,
+  "safe_defaults": [],
+  "allowed_dev_decisions": [
+    "在不改变旧站用户可见行为和 SEO 文案的前提下, 可调整组件拆分、文件命名和 Tailwind class 组织方式。",
+    "可用纯函数抽取旧站文本处理逻辑, 只要输出与旧站等价。",
+    "可保留当前框架构建必需的基础依赖和 shadcn/ui 基础组件。",
+    "可选择用 curl、Playwright 或 Codex Browser 完成 UI/SEO 验证, 但必须覆盖 contract 中的 AC。"
+  ],
+  "forbidden_dev_decisions": [
+    "不得保留或重新引入登录、后台、支付、数据库、积分、订阅、RBAC、CMS、博客、工单等无用 ShipAny 业务能力。",
+    "不得将旧站六语言缩减为 en/zh。",
+    "不得改写旧站 title、description、keywords、H1/H2/H3、FAQ 和正文来优化文案。",
+    "不得替换旧站 AdSense client/slot、ads.txt 或 pageview 监控脚本。",
+    "不得让公开工具页依赖 DATABASE_URL、AUTH_SECRET 或支付/认证密钥才能构建或访问。",
+    "不得手动编辑 src/routeTree.gen.ts。"
+  ],
+  "reality_check_snapshot": {
+    "observed_repositories": [
+      {
+        "name": "text-format",
+        "path": "/Users/lif/Documents/code/outweb/common_web/text-format",
+        "observed_at_commit": "b90a034",
+        "notes": "当前 TanStack Start / ShipAny SaaS 模板, 工作树存在 AGENTS.md 用户修改。"
+      },
+      {
+        "name": "text-format_ori",
+        "path": "/Users/lif/Documents/code/outweb/common_web/text-format_ori",
+        "observed_at_commit": "d91895b",
+        "notes": "旧 Text-Format Next.js 站点, git 状态干净。"
+      }
+    ],
+    "seams": [
+      {
+        "type": "module-entrypoint",
+        "location": "text-format src/routes/index.tsx",
+        "observed_at_commit": "b90a034",
+        "notes": "当前首页是 ShipAny demo landing, 需要替换为 Text-Format 首页工具。"
+      },
+      {
+        "type": "module-entrypoint",
+        "location": "text-format_ori src/app/[locale]/PageComponent.tsx",
+        "observed_at_commit": "d91895b",
+        "notes": "旧站首页文本清理工具、广告位置、SEO head 调用和说明正文来源。"
+      },
+      {
+        "type": "module-entrypoint",
+        "location": "text-format_ori src/app/[locale]/deleteformat/DeleteFormatComponent.tsx",
+        "observed_at_commit": "d91895b",
+        "notes": "删除格式页面和处理逻辑来源。"
+      },
+      {
+        "type": "module-entrypoint",
+        "location": "text-format_ori src/app/[locale]/formathtmlonline/FormatHtmlComponent.tsx",
+        "observed_at_commit": "d91895b",
+        "notes": "HTML 格式化页面和两空格缩进算法来源。"
+      },
+      {
+        "type": "module-entrypoint",
+        "location": "text-format_ori src/app/[locale]/removeduplicates/RemoveDuplicatesComponent.tsx",
+        "observed_at_commit": "d91895b",
+        "notes": "去重、忽略大小写、升序/降序互斥逻辑来源。"
+      },
+      {
+        "type": "module-entrypoint",
+        "location": "text-format_ori src/app/[locale]/fontremover/FontRemoverComponent.tsx",
+        "observed_at_commit": "d91895b",
+        "notes": "Unicode 字体映射和 preserve_symbols 逻辑来源。"
+      },
+      {
+        "type": "config-key",
+        "location": "text-format project.inlang/settings.json",
+        "observed_at_commit": "b90a034",
+        "notes": "当前只支持 en/zh, 需要扩展到 en/zh/ko/ja/de/ar。"
+      },
+      {
+        "type": "config-key",
+        "location": "text-format vite.config.ts paraglideVitePlugin.urlPatterns",
+        "observed_at_commit": "b90a034",
+        "notes": "当前只配置 en 无前缀和 zh 前缀, 需要扩到六语言。"
+      },
+      {
+        "type": "integration-touchpoint",
+        "location": "text-format_ori src/components/HeadInfo.tsx",
+        "observed_at_commit": "d91895b",
+        "notes": "旧站 title/meta/canonical/hreflang/pageview 脚本语义来源。"
+      },
+      {
+        "type": "integration-touchpoint",
+        "location": "text-format_ori src/components/GoogleAd.tsx and GoogleAdFixed.tsx",
+        "observed_at_commit": "d91895b",
+        "notes": "AdSense client ca-pub-7741547389250990, slot 7321261240 和 9909889778。"
+      },
+      {
+        "type": "module-entrypoint",
+        "location": "text-format src/routes/admin, src/routes/settings, src/routes/(auth), src/routes/api, src/modules, src/core/auth/payment/db",
+        "observed_at_commit": "b90a034",
+        "notes": "ShipAny 登录、后台、支付、数据库等业务能力需删除。"
+      },
+      {
+        "type": "integration-touchpoint",
+        "location": "text-format_ori public/robots.txt, public/sitemap.xml, public/ads.txt",
+        "observed_at_commit": "d91895b",
+        "notes": "SEO 文件输出参考。"
+      }
+    ]
+  },
+  "verification_summary": {
+    "total_ac": 16,
+    "by_verify_type": {
+      "ui-test": 8,
+      "integration-test": 7,
+      "build-check": 1
+    }
+  },
+  "required_files": [
+    "contract.md",
+    "spec.md",
+    "handoff-manifest.json"
+  ]
+}

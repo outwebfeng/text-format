@@ -1,20 +1,41 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
 /.pnp
-.pnp.js
-.yarn/install-state.gz
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
 
-# testing
-/coverage
-
-# next.js
+# tanstack start / vite / nitro
 /.next/
-/out/
+/.output/
+/.nitro/
+/.tanstack/
+/dist/
+src/routeTree.gen.ts
+src/paraglide/
+
+# cloudflare — wrangler.jsonc is your working copy (real D1 id, URLs);
+# the committed template is wrangler.example.jsonc
+/.wrangler/
+wrangler.jsonc
+
+# claude code local state
+.claude/scheduled_tasks.lock
 
 # production
 /build
+
+# deploy
+.vercel
+
+# editors (keep .cursor/skills — cross-agent symlink to .claude/skills)
+.idea
+.vscode
+.cursor/*
+!.cursor/skills
 
 # misc
 .DS_Store
@@ -24,17 +45,23 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.pnpm-debug.log*
 
-# local env files
-.env*.local
-
-# vercel
-.vercel
+# env — local files hold secrets, never commit (keep .env.example tracked)
+.env
+.env.*
+!.env.example
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
 
-# Cloudflare Workers build output
-.open-next
-.wrangler
+# database
+/data/
+/drizzle/
+src/config/db/schema.ts
+
+# npm (project uses pnpm)
+package-lock.json
+
+# Runtime image uploads (no-storage local fallback)
+/public/uploads/

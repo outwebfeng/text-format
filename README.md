@@ -1,57 +1,54 @@
 # Text-Format
-Text-Format is an all-in-one text cleaning and text formatting online tool that can perform many simple and complex text operations including format text, clean text, remove line breaks, strip HTML, convert case, find and replace text. Using Text-Format allows you to quickly get a clean and tidy text content without having to do tedious manual work.
 
-👉 [Text-Format](https://text-format.com) | [English](https://github.com/outwebfeng/text-format/blob/main/README.md)  | [简体中文](https://github.com/outwebfeng/text-format/blob/main/README.zh-CN.md) 
+Text-Format is a multilingual online text processing site rebuilt on the current TanStack Start framework. It preserves the original tool URLs, SEO metadata, multilingual content, monitoring script, AdSense setup, robots, sitemap, and ads.txt behavior from the legacy `text-format_ori` project.
 
+## Pages
 
-## Quick Started
+- `/` — Text Format Cleaner
+- `/deleteformat` — Delete Format
+- `/formathtmlonline` — Format HTML Online
+- `/removeduplicates` — Remove Duplicates
+- `/fontremover` — Font Remover
+- `/privacy-policy`
+- `/terms-of-service`
 
-### Deploy on Vercel
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FSoraWebui%2FSoraWebui%2Ftree%2Flogin&project-name=SoraWebui&repository-name=SoraWebui&external-id=https%3A%2F%2Fgithub.com%2FSoraWebui%2FSoraWebui%2Ftree%2Flogin)
+English URLs are unprefixed. Chinese, Korean, Japanese, German, and Arabic URLs use `/zh`, `/ko`, `/ja`, `/de`, and `/ar` prefixes.
 
-### 1. Clone project
-
-```bash
-git clone git@github.com:outwebfeng/text-format.git
-```
-
-### 2. Install dependencies
-
-```bash
-cd text-format && yarn
-#or
-cd text-format && npm install
-#or
-cd text-format && pnpm install
-```
-
-### 3. copy .env.example and rename it to .env.local
+## Commands
 
 ```bash
-# website URL
-NEXT_PUBLIC_SITE_URL=http://localhost
-
-```
-
-### 4. Run it
-
-```bash
-yarn dev
-#or
-npm run dev
-#or
+pnpm install
+cp .env.example .env.development
 pnpm dev
+pnpm build
+pnpm start
 ```
 
-### 5. Open [http://localhost](http://localhost) with your browser to see it.
-![success_deploy.jpg](https://text-format.com/success_deploy.png)
+Cloudflare Workers:
 
+```bash
+cp wrangler.example.jsonc wrangler.jsonc
+pnpm cf:build
+pnpm cf:deploy
+```
 
-## Buy Me a Coffee
-[![Buy Me a Coffee](https://storage.ko-fi.com/cdn/kofi4.png?v=3)](https://ko-fi.com/F1F8YKAKB)
+## Environment
 
+```env
+VITE_APP_URL=https://text-format.com
+VITE_APP_NAME=Text-Format
+VITE_APP_DESCRIPTION=Text-format is text format cleaner online tool,text cleaner,format text online,text format remover,strip HTML,remove characters,replace online.
+VITE_APP_LOGO=/logo.png
+VITE_DEFAULT_LOCALE=en
+VITE_GOOGLE_ANALYTICS_ID=
+VITE_GOOGLE_ADSENSE_CLIENT_ID=ca-pub-7741547389250990
+```
 
+## Stack
 
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=outwebfeng/text-format&type=Date)](https://star-history.com/#outwebfeng/text-format&Date)
+- TanStack Start
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- Paraglide JS
+- Nitro / Cloudflare Workers

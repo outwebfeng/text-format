@@ -1,0 +1,19 @@
+// Cloudflare Workers deploy config — TEMPLATE.
+// Copy this to wrangler.jsonc (gitignored) and fill in the production URL.
+// `pnpm cf:build` merges wrangler.jsonc into the generated worker config;
+// deploy with `pnpm cf:deploy`.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "text-format",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true
+  },
+  "vars": {
+    "VITE_APP_URL": "https://text-format.com",
+    "VITE_APP_NAME": "Text-Format",
+    "VITE_APP_DESCRIPTION": "Text-format is text format cleaner online tool,text cleaner,format text online,text format remover,strip HTML,remove characters,replace online.",
+    "VITE_DEFAULT_LOCALE": "en",
+    "VITE_GOOGLE_ADSENSE_CLIENT_ID": "ca-pub-7741547389250990"
+  }
+}
