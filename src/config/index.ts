@@ -10,7 +10,7 @@ export const envConfigs: Record<string, string> = {
   app_name: publicEnv('VITE_APP_NAME') ?? 'Text-Format',
   app_description:
     publicEnv('VITE_APP_DESCRIPTION') ??
-    'Text-format is text format cleaner online tool,text cleaner,format text online,text format remover,strip HTML,remove characters,replace online.',
+    'Text Format is a free online text format cleaner for cleaning text, formatting text online, removing formatting, stripping HTML, removing characters, and replacing text.',
   app_logo: publicEnv('VITE_APP_LOGO') ?? '/webui.svg',
   locale: publicEnv('VITE_DEFAULT_LOCALE') ?? 'en',
   google_analytics_id: publicEnv('VITE_GOOGLE_ANALYTICS_ID') ?? '',
