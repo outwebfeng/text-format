@@ -99,26 +99,55 @@ function collapseUnfilledAd(ins: HTMLElement) {
   };
 }
 
+// Defer ad loading until the slot is within ~400px of the viewport, so the
+// heavy AdSense script never competes with the initial render / LCP.
+function whenNearViewport(target: Element, onEnter: () => void): () => void {
+  if (typeof IntersectionObserver === 'undefined') {
+    onEnter();
+    return () => undefined;
+  }
+  const observer = new IntersectionObserver(
+    (entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        observer.disconnect();
+        onEnter();
+      }
+    },
+    { rootMargin: '400px' }
+  );
+  observer.observe(target);
+  return () => observer.disconnect();
+}
+
 export function GoogleAd() {
   const adRef = useRef<HTMLDivElement>(null);
   const initialized = useRef(false);
 
   useEffect(() => {
-    if (!adRef.current || initialized.current) return;
-    adRef.current.innerHTML = '';
-    const ins = document.createElement('ins');
-    ins.className = 'adsbygoogle';
-    ins.style.display = 'block';
-    ins.setAttribute('data-ad-client', ADSENSE_CLIENT);
-    ins.setAttribute('data-ad-slot', '7321261240');
-    ins.setAttribute('data-ad-format', 'auto');
-    ins.setAttribute('data-full-width-responsive', 'true');
-    adRef.current.appendChild(ins);
-    initialized.current = true;
-    const cleanup = collapseUnfilledAd(ins);
-    requestAd(ins);
+    const container = adRef.current;
+    if (!container) return;
 
-    return cleanup;
+    let cleanupAd: (() => void) | undefined;
+    const stopObserving = whenNearViewport(container, () => {
+      if (initialized.current || !adRef.current) return;
+      adRef.current.innerHTML = '';
+      const ins = document.createElement('ins');
+      ins.className = 'adsbygoogle';
+      ins.style.display = 'block';
+      ins.setAttribute('data-ad-client', ADSENSE_CLIENT);
+      ins.setAttribute('data-ad-slot', '7321261240');
+      ins.setAttribute('data-ad-format', 'auto');
+      ins.setAttribute('data-full-width-responsive', 'true');
+      adRef.current.appendChild(ins);
+      initialized.current = true;
+      cleanupAd = collapseUnfilledAd(ins);
+      requestAd(ins);
+    });
+
+    return () => {
+      stopObserving();
+      cleanupAd?.();
+    };
   }, []);
 
   return <div ref={adRef} className="w-full" />;
@@ -129,18 +158,25 @@ export function GoogleAdFixed() {
   const initialized = useRef(false);
 
   useEffect(() => {
-    if (!adRef.current || initialized.current) return;
-    adRef.current.innerHTML = '';
-    const ins = document.createElement('ins');
-    ins.className = 'adsbygoogle';
-    ins.style.display = 'inline-block';
-    ins.style.width = '728px';
-    ins.style.height = '90px';
-    ins.setAttribute('data-ad-client', ADSENSE_CLIENT);
-    ins.setAttribute('data-ad-slot', '9909889778');
-    adRef.current.appendChild(ins);
-    initialized.current = true;
-    requestAd(ins);
+    const container = adRef.current;
+    if (!container) return;
+
+    const stopObserving = whenNearViewport(container, () => {
+      if (initialized.current || !adRef.current) return;
+      adRef.current.innerHTML = '';
+      const ins = document.createElement('ins');
+      ins.className = 'adsbygoogle';
+      ins.style.display = 'inline-block';
+      ins.style.width = '728px';
+      ins.style.height = '90px';
+      ins.setAttribute('data-ad-client', ADSENSE_CLIENT);
+      ins.setAttribute('data-ad-slot', '9909889778');
+      adRef.current.appendChild(ins);
+      initialized.current = true;
+      requestAd(ins);
+    });
+
+    return stopObserving;
   }, []);
 
   return (

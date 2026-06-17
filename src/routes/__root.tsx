@@ -23,8 +23,9 @@ export const Route = createRootRoute({
       ],
       links: [
         { rel: 'icon', href: '/favicon.ico', type: 'image/x-icon' },
-        { rel: 'dns-prefetch', href: 'https://images.text-format.com' },
-        { rel: 'preconnect', href: 'https://images.text-format.com', crossOrigin: 'anonymous' },
+        // Warm up connections to the only always-loaded third parties (AdSense + analytics).
+        { rel: 'preconnect', href: 'https://pagead2.googlesyndication.com', crossOrigin: 'anonymous' },
+        { rel: 'dns-prefetch', href: 'https://app.pageview.app' },
       ],
     };
   },
