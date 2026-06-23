@@ -37,6 +37,15 @@
     "onlyBuiltDependencies": [
       "esbuild",
       "workerd"
-    ]
+    ],
+    "overrides": {
+      "drizzle-orm": ">=0.45.2",
+      "kysely": ">=0.28.17",
+      "ws": ">=8.21.0",
+      "undici": ">=7.28.0 <8",
+      "esbuild": ">=0.28.1",
+      "@babel/core": ">=7.29.6 <8",
+      "js-yaml": ">=4.2.0 <5"
+    }
   }
 }
