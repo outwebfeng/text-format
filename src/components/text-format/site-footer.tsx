@@ -10,7 +10,7 @@ export function SiteFooter({ locale }: { locale: string }) {
       <div className="mx-auto max-w-7xl px-6 py-10">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
-            <p className="max-w-xl text-sm leading-6 text-[#5c6d63]">{t('IndexPage.description', locale)}</p>
+            <p className="max-w-xl text-sm leading-6 text-[#5c6d63]">{t('siteFooter.description', locale)}</p>
           </div>
           <div className="mt-2 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div />
